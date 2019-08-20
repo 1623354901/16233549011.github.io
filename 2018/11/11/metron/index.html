@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>metron | 卢莹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="卢莹的博客">
+  
+  <meta name="description" content="今天小编在学习了metron之后来向大家分享一下我学到的东西： 一、metron是什么：  metron是一种安全大数据分析架构，其建立了一个平台，它为组织提供了大规模摄入、处理和存储各种安全数据提要的能力，以便检测网络异常并使组织能够快速响应这些异常。 二、metron分为这样几个部分抓取数据—解析—富集—分类—打标签—警告，保存—UI设计 详见如图：     第一步：首先要抓取数据，大数据">
+<meta name="keywords" content="metron">
+<meta property="og:type" content="article">
+<meta property="og:title" content="metron">
+<meta property="og:url" content="http://www.devil.pub/2018/11/11/metron/index.html">
+<meta property="og:site_name" content="卢莹">
+<meta property="og:description" content="今天小编在学习了metron之后来向大家分享一下我学到的东西： 一、metron是什么：  metron是一种安全大数据分析架构，其建立了一个平台，它为组织提供了大规模摄入、处理和存储各种安全数据提要的能力，以便检测网络异常并使组织能够快速响应这些异常。 二、metron分为这样几个部分抓取数据—解析—富集—分类—打标签—警告，保存—UI设计 详见如图：     第一步：首先要抓取数据，大数据">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-11-19T05:03:49.623Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="metron">
+<meta name="twitter:description" content="今天小编在学习了metron之后来向大家分享一下我学到的东西： 一、metron是什么：  metron是一种安全大数据分析架构，其建立了一个平台，它为组织提供了大规模摄入、处理和存储各种安全数据提要的能力，以便检测网络异常并使组织能够快速响应这些异常。 二、metron分为这样几个部分抓取数据—解析—富集—分类—打标签—警告，保存—UI设计 详见如图：     第一步：首先要抓取数据，大数据">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">卢莹的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>主页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>目录</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        卢莹的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个WEB小菜鸟的笔记
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="卢莹的博客" target="_blank" href="https://www.devil.pub">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/1623354901/1623354901.github.io">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-metron" class="article article-type-post" itemscope itemprop="blogPost">
+ 
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      metron
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/metron/">metron</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-11-11
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+        
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>  今天小编在学习了metron之后来向大家分享一下我学到的东西：</p>
+<h3 id="一、metron是什么："><a href="#一、metron是什么：" class="headerlink" title="一、metron是什么："></a>一、metron是什么：</h3><p>  metron是一种安全大数据分析架构，其建立了一个平台，它为组织提供了大规模摄入、处理和存储各种安全数据提要的能力，以便检测网络异常并使组织能够快速响应这些异常。</p>
+<h3 id="二、metron分为这样几个部分"><a href="#二、metron分为这样几个部分" class="headerlink" title="二、metron分为这样几个部分"></a>二、metron分为这样几个部分</h3><p>抓取数据—解析—富集—分类—打标签—警告，保存—UI设计</p>
+<p>详见如图：</p>
+
+
+
+
+<h4 id="第一步：首先要抓取数据，大数据分析平台的数据来源，基本有两个部分，一类是通过部署遥感（Telemetry）传感器，从系统日志、HTTP流量、文件系统和其他用户-系统行为中获取到的日志信息；一类是通过网络路由、网关等设备获取的数据包。然后将这些数据放到缓冲池中，缓冲池主要对这些数据包和日志包装为消息队列，可以便于上层Storm的实时处理。这里主要的软件是开源的Kafka，这主要用于日志处理的分布式消息队列，关注用户行为（登录、注销、文件操作等）和系统运行日志（CPU、内存、网络、进程信息等）。"><a href="#第一步：首先要抓取数据，大数据分析平台的数据来源，基本有两个部分，一类是通过部署遥感（Telemetry）传感器，从系统日志、HTTP流量、文件系统和其他用户-系统行为中获取到的日志信息；一类是通过网络路由、网关等设备获取的数据包。然后将这些数据放到缓冲池中，缓冲池主要对这些数据包和日志包装为消息队列，可以便于上层Storm的实时处理。这里主要的软件是开源的Kafka，这主要用于日志处理的分布式消息队列，关注用户行为（登录、注销、文件操作等）和系统运行日志（CPU、内存、网络、进程信息等）。" class="headerlink" title="第一步：首先要抓取数据，大数据分析平台的数据来源，基本有两个部分，一类是通过部署遥感（Telemetry）传感器，从系统日志、HTTP流量、文件系统和其他用户/系统行为中获取到的日志信息；一类是通过网络路由、网关等设备获取的数据包。然后将这些数据放到缓冲池中，缓冲池主要对这些数据包和日志包装为消息队列，可以便于上层Storm的实时处理。这里主要的软件是开源的Kafka，这主要用于日志处理的分布式消息队列，关注用户行为（登录、注销、文件操作等）和系统运行日志（CPU、内存、网络、进程信息等）。"></a>第一步：首先要抓取数据，大数据分析平台的数据来源，基本有两个部分，一类是通过部署遥感（Telemetry）传感器，从系统日志、HTTP流量、文件系统和其他用户/系统行为中获取到的日志信息；一类是通过网络路由、网关等设备获取的数据包。然后将这些数据放到缓冲池中，缓冲池主要对这些数据包和日志包装为消息队列，可以便于上层Storm的实时处理。这里主要的软件是开源的Kafka，这主要用于日志处理的分布式消息队列，关注用户行为（登录、注销、文件操作等）和系统运行日志（CPU、内存、网络、进程信息等）。</h4><p>（在这里，<strong>详细介绍一下kafka:</strong></p>
+<p>Kafka是由Apache软件基金会开发的一个开源流处理平台，由Scala和Java编写。Kafka是一种高吞吐量的分布式发布订阅消息系统，它可以处理消费者规模的网站中的所有动作流数据。 这种动作（网页浏览，搜索和其他用户的行动）是在现代网络上的许多社会功能的一个关键因素。 这些数据通常是由于吞吐量的要求而通过处理日志和日志聚合来解决。 对于像Hadoop的一样的日志数据和离线分析系统，但又要求实时处理的限制，这是一个可行的解决方案。Kafka的目的是通过Hadoop的并行加载机制来统一线上和离线的消息处理，也是为了通过集群来提供实时的消息。</p>
+<p><strong>特点如下：</strong>Kafka 是一种高吞吐量 的分布式发布订阅消息系统，有如下特性：通过O(1)的磁盘数据结构提供消息的持久化，这种结构对于即使数以TB的消息存储也能够保持长时间的稳定性能。高吞吐量 ：即使是非常普通的硬件Kafka也可以支持每秒数百万 的消息。支持通过Kafka服务器和消费机集群来分区消息。支持Hadoop并行数据加载。</p>
+<p> <strong>kafka相关术语：**</strong></p>
+<p><strong>BrokerKafka：</strong>集群包含一个或多个服务器，这种服务器被称为broker<br><strong>Topic：</strong>每条发布到Kafka集群的消息都有一个类别，这个类别被称为Topic（物理上不同Topic的消息分开存储，逻辑上一个Topic的消息虽然保存于一个或多个broker上但用户只需指定消息的Topic即可生产或消费数据而不必关心数据存于何处）<br><strong>Partition：</strong>Partition是物理上的概念，每个Topic包含一个或多个Partition.<br><strong>Consumer Group：</strong> 每个Consumer属于一个特定的Consumer Group（可为每个Consumer指定group name，若不指定group name则属于默认的group）。）</p>
+<h4 id="第二步：处理（解析，规范化，验证和标记）"><a href="#第二步：处理（解析，规范化，验证和标记）" class="headerlink" title="第二步：处理（解析，规范化，验证和标记）"></a>第二步：处理（解析，规范化，验证和标记）</h4><p>metron pcap backend 主要用于创建一个storm topology 处理流，将来自于Kafka的原始数据解析到HDFS中每个原始事件都将被解析并标准化为标准化的平面JSON结构。每个事件都将标准化为至少一个7元组的JSON结构。这样做是为了使下游的拓扑关联引擎能够通过这些字段来关联来自不同拓扑的消息。标准字段名称如下：</p>
+<p>ip_src_addr：第3层源IP<br>ip_dst_addr：第3层dest IP<br>ip_src_port：第4层源端口<br>ip_dst_port：第4层dest端口<br>协议：第4层协议<br>时间戳（纪元）<br>original_string：消息的人类友好字符串表示形式<br>在此步骤中，还可以验证原始事件并使用将由下游处理使用的其他元数据对其进行标记。</p>
+
+<p>然后，</p>
+<h4 id="第3步-丰富"><a href="#第3步-丰富" class="headerlink" title="第3步 - 丰富"></a>第3步 - 丰富</h4><p>一旦原始安全遥测事件被解析和规范化，下一步就是丰富规范化事件的不同数据元素。丰富的例子是GEO，其中外部IP地址丰富了GeoIP信息（纬度/经度坐标+城市/州/国家）或HOST浓缩，其中IP通过主机细节得到丰富（例如：IP对应于作为主机X的主机X）用于电子商务应用程序的Web服务器场）。</p>
+<h4 id="第4步-标签"><a href="#第4步-标签" class="headerlink" title="第4步 - 标签"></a>第4步 - 标签</h4><p>在浓缩之后，遥测事件经历标记过程。在此阶段内完成的操作包括威胁英特尔交叉引用检查，其中遥测事件中的元素可用于查找威胁英特尔Feed数据源，如  Soltra  生成的Stix / Taxii供稿或其他威胁英特尔聚合器服务。然后，当发生命中时，这些威胁英特尔服务将使用威胁英特尔元数据“标记”遥测事件。</p>
+<p>其他类型的服务包括使用模型作为服务模式执行/评分分析模型，其中包含正在流入的遥测事件（有关分析模型/包和模型作为服务模式的更多详细信息将在本系列的即将发布的博客中出现）。</p>
+<h4 id="第5步-警告和坚持"><a href="#第5步-警告和坚持" class="headerlink" title="第5步 - 警告和坚持"></a>第5步 - 警告和坚持</h4><p>在此阶段，某些遥测事件可以发起警报。然后，这些类型的遥测事件在警报索引存储中被索引。遥测事件可以产生由多种因素触发的警报，包括：<br>事件类型 - 原始遥测事件本身是一个警报。例如，Snort生成的任何事件   都是一个警报，因此它将自动编入索引作为警报。<br>Threat intel hit - 如果原始遥测事件具有英特尔威胁，它将被标记为警报。<br>此外，在此步骤中，所有丰富和标记的遥测事件都会被编入索引并在Hadoop中持久存储以进行长期存储。在Hadoop中存储这些事件会在企业内部生成安全数据保险库，从而可以执行下一代分析</p>
+<h4 id="第六步-UI门户和数据与集成服务"><a href="#第六步-UI门户和数据与集成服务" class="headerlink" title="第六步-UI门户和数据与集成服务"></a>第六步-UI门户和数据与集成服务</h4><p>步骤1到步骤6提供了一种机制，用于摄取、解析、规范、丰富、标记、索引所有安全遥测数据，并将企业中的不同数据源存储到一个安全数据库中。这允许Metron平台为不同类型的安全用户提供一组服务，以更有效地执行他们的工作。其中一些服务包括：</p>
+<p>实时搜索和交互式仪表板/门户-单一窗格的安全操作分析人员，以查看警报和相关警报颗粒遥测事件，导致警报。<br>数据建模/功能工程服务-由于Metron框架规范并丰富了数据，并将其存储在标准化位置的安全数据池(HDFS，HBASE)中，因此平台可以提供各种分析模型。这些模型将对所需的特征矩阵进行规范，从而大大简化了作为分析中最复杂方面的特征工程过程。特征矩阵所需的数据建模服务将由木星、IPython和Zeppelin等工具提供。<br>集成和扩展层-Metron平台最强大的特性之一是能够根据您自己的需要/需求定制它，包括：<br>吸收新的数据源<br>添加新的解析器<br>增加新的浓缩服务<br>增加新威胁<br>建立、部署和执行新的分析模型<br>与企业工作流引擎的集成<br>自定义安全仪表板和门户                               </p>
+<p><strong>以上纯属个人总结，欢迎各位大佬点评</strong></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年11月19日 13:03</p>
+        <p>原始链接： <a class="post-url" href="/2018/11/11/metron/" title="metron">http://www.devil.pub/2018/11/11/metron/</a></p>
+        <footer>
+            <a href="http://www.devil.pub">
+                <img src="/images/logo.png" alt="卢莹">
+                卢莹
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        心意领了
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.devil.pub/2018/11/11/metron/&title=《metron》 — 卢莹&pic=https://www.devil.pub/images/feng/metron.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.devil.pub/2018/11/11/metron/&title=《metron》 — 卢莹&source=一个前端小菜鸟的笔记" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.devil.pub/2018/11/11/metron/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《metron》 — 卢莹&url=http://www.devil.pub/2018/11/11/metron/&via=http://www.devil.pub" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.devil.pub/2018/11/11/metron/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.devil.pub/2018/11/11/metron/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/metron/" class="color2">metron</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、metron是什么："><span class="post-toc-text">一、metron是什么：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、metron分为这样几个部分"><span class="post-toc-text">二、metron分为这样几个部分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第一步：首先要抓取数据，大数据分析平台的数据来源，基本有两个部分，一类是通过部署遥感（Telemetry）传感器，从系统日志、HTTP流量、文件系统和其他用户-系统行为中获取到的日志信息；一类是通过网络路由、网关等设备获取的数据包。然后将这些数据放到缓冲池中，缓冲池主要对这些数据包和日志包装为消息队列，可以便于上层Storm的实时处理。这里主要的软件是开源的Kafka，这主要用于日志处理的分布式消息队列，关注用户行为（登录、注销、文件操作等）和系统运行日志（CPU、内存、网络、进程信息等）。"><span class="post-toc-text">第一步：首先要抓取数据，大数据分析平台的数据来源，基本有两个部分，一类是通过部署遥感（Telemetry）传感器，从系统日志、HTTP流量、文件系统和其他用户/系统行为中获取到的日志信息；一类是通过网络路由、网关等设备获取的数据包。然后将这些数据放到缓冲池中，缓冲池主要对这些数据包和日志包装为消息队列，可以便于上层Storm的实时处理。这里主要的软件是开源的Kafka，这主要用于日志处理的分布式消息队列，关注用户行为（登录、注销、文件操作等）和系统运行日志（CPU、内存、网络、进程信息等）。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第二步：处理（解析，规范化，验证和标记）"><span class="post-toc-text">第二步：处理（解析，规范化，验证和标记）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第3步-丰富"><span class="post-toc-text">第3步 - 丰富</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第4步-标签"><span class="post-toc-text">第4步 - 标签</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第5步-警告和坚持"><span class="post-toc-text">第5步 - 警告和坚持</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第六步-UI门户和数据与集成服务"><span class="post-toc-text">第六步-UI门户和数据与集成服务</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2018/11/11/python之格式化输出/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          python之格式化输出
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2018/11/11/华为交换机忘记密码如何恢复出厂设置以及重新设置密码/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">华为交换机忘记密码如何恢复出厂设置以及重新设置密码</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTExNC8xNzYzOQ==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 卢莹<br>
+      </p>
+    </div>
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/01/2018 18:18:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://www.devil.pub",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux/">Linux</a><a class="category-link" href="/categories/metron/">metron</a><a class="category-link" href="/categories/python/">python</a><a class="category-link" href="/categories/大数据/">大数据</a><a class="category-link" href="/categories/网络/">网络</a><a class="category-link" href="/categories/虚拟机/">虚拟机</a><a class="category-link" href="/categories/路由器/">路由器</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>主页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>目录</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>

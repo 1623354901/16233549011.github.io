@@ -3,22 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Hello World | 卢莹</title>
+  <title>使用win7超级终端连接华为交换机并配置端口镜像 | 卢莹</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="卢莹的博客">
   
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="首先，用console连接主机和交换机，打开超级终端，（注意：一定要用win7系统配置）如图所示：   新建连接时名字随意，但要注意不能是下面图标：  然后出现下面这样一个页面，连接时使用COM1口，也可通过此电脑–右键管理–设备管理器–端口查看端口号，如图：   点击确定，出现这样一个界面：  设置中终端参数为默认值，即：波特率：9600bit/s,数据位8位，一位停止位，无校验和无控制流。如">
+<meta name="keywords" content="端口镜像">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://www.devil.pub/2019/08/20/hello-world/index.html">
+<meta property="og:title" content="使用win7超级终端连接华为交换机并配置端口镜像">
+<meta property="og:url" content="http://www.devil.pub/2018/11/11/使用win7超级终端连接华为交换机并配置端口镜像/index.html">
 <meta property="og:site_name" content="卢莹">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="首先，用console连接主机和交换机，打开超级终端，（注意：一定要用win7系统配置）如图所示：   新建连接时名字随意，但要注意不能是下面图标：  然后出现下面这样一个页面，连接时使用COM1口，也可通过此电脑–右键管理–设备管理器–端口查看端口号，如图：   点击确定，出现这样一个界面：  设置中终端参数为默认值，即：波特率：9600bit/s,数据位8位，一位停止位，无校验和无控制流。如">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-20T07:33:02.682Z">
+<meta property="og:updated_time" content="2018-11-19T05:08:15.288Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="使用win7超级终端连接华为交换机并配置端口镜像">
+<meta name="twitter:description" content="首先，用console连接主机和交换机，打开超级终端，（注意：一定要用win7系统配置）如图所示：   新建连接时名字随意，但要注意不能是下面图标：  然后出现下面这样一个页面，连接时使用COM1口，也可通过此电脑–右键管理–设备管理器–端口查看端口号，如图：   点击确定，出现这样一个界面：  设置中终端参数为默认值，即：波特率：9600bit/s,数据位8位，一位停止位，无校验和无控制流。如">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -103,7 +104,7 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-使用win7超级终端连接华为交换机并配置端口镜像" class="article article-type-post" itemscope itemprop="blogPost">
  
   <div class="article-inner">
     
@@ -111,13 +112,20 @@
         
   
     <h1 class="post-title" itemprop="name">
-      Hello World
+      使用win7超级终端连接华为交换机并配置端口镜像
     </h1>
     <div class="post-title-bar">
       <ul>
           
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/网络/">网络</a>
+                  
+              </li>
+          
         <li>
-          <i class="fa fa-calendar"></i>  2019-08-20
+          <i class="fa fa-calendar"></i>  2018-11-11
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -134,24 +142,34 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+            <p> 首先，用console连接主机和交换机，打开超级终端，（注意：一定要用win7系统配置）如图所示：</p>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>新建连接时名字随意，但要注意不能是下面图标：</p>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>然后出现下面这样一个页面，连接时使用COM1口，也可通过此电脑–右键管理–设备管理器–端口查看端口号，如图：</p>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+<p>点击确定，出现这样一个界面：</p>
+
+<p>设置中终端参数为默认值，即：波特率：9600bit/s,数据位8位，一位停止位，无校验和无控制流。如下图：</p>
+
+<p>点击完成后进入以下界面：</p>
+
+<p>此时再插上交换机的电源，（提前插上会出现键盘失灵的情况），终端上显示以太网交换机自检信息，自检结束后提示用户输入回车，到现在，超级终端和交换机之间的连接已经建立好了，接下来进行配置：<br>1.输入用户名，密码，华为新交换机默认用户名：admin,密码:admin@huawei(说明书上也有）.</p>
+
+<p>2.接下来进入用户模式：system-view：<br>(注意：思科有用户模式，特权模式，全局配置模式三种，<br>enable：从用户模式进入特权模式<br>configure terminal：进入全局配置模式）<br>华为有用户视图和系统视图两种：<br>system-view：从用户视图到系统视图<br>quit：从系统视图退到用户视图）</p>
+
+<p>3、配置观察口和镜像口，在这里，我设置1口为观察口，监控流量，2.4.6.7.8为镜像口，<br>配置观察口命令：observe-port interface GigabitEthernet0/0/1</p>
+
+<p>配置景象口命令：<br>端口2：interface GigabitEthernet 0/0/2<br>Port-mirroring to observe-port 1 both (both指对流入和流出的数据包都进行映射，inbound为对进入的映射，outbound流出映射，这里我们选择bound)<br>其他镜像端口同上，如图：</p>
+
+<p>这样镜像端口就配置成功了。</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年08月20日 15:33</p>
-        <p>原始链接： <a class="post-url" href="/2019/08/20/hello-world/" title="Hello World">http://www.devil.pub/2019/08/20/hello-world/</a></p>
+        <p>最后更新： 2018年11月19日 13:08</p>
+        <p>原始链接： <a class="post-url" href="/2018/11/11/使用win7超级终端连接华为交换机并配置端口镜像/" title="使用win7超级终端连接华为交换机并配置端口镜像">http://www.devil.pub/2018/11/11/使用win7超级终端连接华为交换机并配置端口镜像/</a></p>
         <footer>
             <a href="http://www.devil.pub">
                 <img src="/images/logo.png" alt="卢莹">
@@ -208,7 +226,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.devil.pub/2019/08/20/hello-world/&title=《Hello World》 — 卢莹&pic=http://www.devil.pubimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.devil.pub/2018/11/11/使用win7超级终端连接华为交换机并配置端口镜像/&title=《使用win7超级终端连接华为交换机并配置端口镜像》 — 卢莹&pic=https://www.devil.pub/images/feng/使用win7超级终端连接华为交换机并配置端口镜像.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -218,22 +236,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.devil.pub/2019/08/20/hello-world/&title=《Hello World》 — 卢莹&source=一个前端小菜鸟的笔记" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.devil.pub/2018/11/11/使用win7超级终端连接华为交换机并配置端口镜像/&title=《使用win7超级终端连接华为交换机并配置端口镜像》 — 卢莹&source=一个前端小菜鸟的笔记" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.devil.pub/2019/08/20/hello-world/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.devil.pub/2018/11/11/使用win7超级终端连接华为交换机并配置端口镜像/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — 卢莹&url=http://www.devil.pub/2019/08/20/hello-world/&via=http://www.devil.pub" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用win7超级终端连接华为交换机并配置端口镜像》 — 卢莹&url=http://www.devil.pub/2018/11/11/使用win7超级终端连接华为交换机并配置端口镜像/&via=http://www.devil.pub" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.devil.pub/2019/08/20/hello-world/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.devil.pub/2018/11/11/使用win7超级终端连接华为交换机并配置端口镜像/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -243,7 +261,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.devil.pub/2019/08/20/hello-world/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.devil.pub/2018/11/11/使用win7超级终端连接华为交换机并配置端口镜像/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -252,6 +270,13 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/端口镜像/" class="color5">端口镜像</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -259,18 +284,22 @@
 </article>
 
 
-    <aside class="post-toc-pos post-toc-top" id="post-toc">
-        <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-    
 
 <nav id="article-nav">
   
+    <a href="/2018/11/11/路由器的三种分组交换方式/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          路由器的三种分组交换方式
+        
+      </span>
+    </a>
   
-    <a href="/2018/12/07/title/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">服务器里配置nat(最详细）</span>
+  
+    <a href="/2018/11/11/python之循环语句/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">python之循环语句</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
