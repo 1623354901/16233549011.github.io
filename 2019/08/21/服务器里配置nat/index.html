@@ -8,35 +8,34 @@
   
     <meta name="keywords" content="卢莹的博客">
   
-  <meta name="description" content="步骤：一、添加一张虚拟网卡点击服务器—-&amp;gt;配置—-&amp;gt;网络—-&amp;gt;添加网络  选择虚拟机  选择创建vSphere标准交换机，注意：去掉vmnic1的对勾，使下面显示无适配器    然后设置网络标签  二、然后创建Linux虚拟机，并配置NAT：1、点击服务器—-&amp;gt;入门—-&amp;gt;创建新的虚拟机  2、步骤和以前安装Linux步骤相似，不同之处在于这次需要安装两张网卡（一张外网">
+  <meta name="description" content="步骤：一、添加一张虚拟网卡点击服务器—-&amp;gt;配置—-&amp;gt;网络—-&amp;gt;添加网络选择虚拟机选择创建vSphere标准交换机，注意：去掉vmnic1的对勾，使下面显示无适配器 然后设置网络标签 二、然后创建Linux虚拟机，并配置NAT：1、点击服务器—-&amp;gt;入门—-&amp;gt;创建新的虚拟机2、步骤和以前安装Linux步骤相似，不同之处在于这次需要安装两张网卡（一张外网网卡，一张内网网卡）">
 <meta name="keywords" content="服务器 NAT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器里配置nat">
 <meta property="og:url" content="http://www.devil.pub/2019/08/21/服务器里配置nat/index.html">
 <meta property="og:site_name" content="卢莹的博客">
-<meta property="og:description" content="步骤：一、添加一张虚拟网卡点击服务器—-&amp;gt;配置—-&amp;gt;网络—-&amp;gt;添加网络  选择虚拟机  选择创建vSphere标准交换机，注意：去掉vmnic1的对勾，使下面显示无适配器    然后设置网络标签  二、然后创建Linux虚拟机，并配置NAT：1、点击服务器—-&amp;gt;入门—-&amp;gt;创建新的虚拟机  2、步骤和以前安装Linux步骤相似，不同之处在于这次需要安装两张网卡（一张外网">
+<meta property="og:description" content="步骤：一、添加一张虚拟网卡点击服务器—-&amp;gt;配置—-&amp;gt;网络—-&amp;gt;添加网络选择虚拟机选择创建vSphere标准交换机，注意：去掉vmnic1的对勾，使下面显示无适配器 然后设置网络标签 二、然后创建Linux虚拟机，并配置NAT：1、点击服务器—-&amp;gt;入门—-&amp;gt;创建新的虚拟机2、步骤和以前安装Linux步骤相似，不同之处在于这次需要安装两张网卡（一张外网网卡，一张内网网卡）">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/01.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/01.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/02.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/03.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/04.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/05.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/06.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/07.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/08.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/09.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/10.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/11.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/12.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/13.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/14.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/15.png">
-<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/16.png">
-<meta property="og:updated_time" content="2019-08-23T09:21:09.319Z">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/02.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/03.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/04.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/05.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/06.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/07.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/08.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/09.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/10.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/11.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/12.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/13.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/14.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/15.png">
+<meta property="og:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/16.png">
+<meta property="og:updated_time" content="2019-08-23T09:24:19.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器里配置nat">
-<meta name="twitter:description" content="步骤：一、添加一张虚拟网卡点击服务器—-&amp;gt;配置—-&amp;gt;网络—-&amp;gt;添加网络  选择虚拟机  选择创建vSphere标准交换机，注意：去掉vmnic1的对勾，使下面显示无适配器    然后设置网络标签  二、然后创建Linux虚拟机，并配置NAT：1、点击服务器—-&amp;gt;入门—-&amp;gt;创建新的虚拟机  2、步骤和以前安装Linux步骤相似，不同之处在于这次需要安装两张网卡（一张外网">
+<meta name="twitter:description" content="步骤：一、添加一张虚拟网卡点击服务器—-&amp;gt;配置—-&amp;gt;网络—-&amp;gt;添加网络选择虚拟机选择创建vSphere标准交换机，注意：去掉vmnic1的对勾，使下面显示无适配器 然后设置网络标签 二、然后创建Linux虚拟机，并配置NAT：1、点击服务器—-&amp;gt;入门—-&amp;gt;创建新的虚拟机2、步骤和以前安装Linux步骤相似，不同之处在于这次需要安装两张网卡（一张外网网卡，一张内网网卡）">
 <meta name="twitter:image" content="http://www.devil.pub/2019/08/21/服务器里配置nat/01.png">
   
   
@@ -187,41 +186,21 @@ ga('send', 'pageview');
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><h3 id="一、添加一张虚拟网卡"><a href="#一、添加一张虚拟网卡" class="headerlink" title="一、添加一张虚拟网卡"></a>一、添加一张虚拟网卡</h3><p>点击服务器—-&gt;配置—-&gt;网络—-&gt;添加网络<br><img src="/2019/08/21/服务器里配置nat/01.png" alt="服务器里配置nat"></p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/01.png">
-<p>选择虚拟机</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/02.png">
-<p>选择创建vSphere标准交换机，注意：去掉vmnic1的对勾，使下面显示无适配器</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/03.png">
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/04.png">
-
-<p>然后设置网络标签</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/05.png">
-<h3 id="二、然后创建Linux虚拟机，并配置NAT："><a href="#二、然后创建Linux虚拟机，并配置NAT：" class="headerlink" title="二、然后创建Linux虚拟机，并配置NAT："></a>二、然后创建Linux虚拟机，并配置NAT：</h3><p>1、点击服务器—-&gt;入门—-&gt;创建新的虚拟机</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/06.png">
-<p>2、步骤和以前安装Linux步骤相似，不同之处在于这次需要安装两张网卡（一张外网网卡，一张内网网卡），一张为默认网卡，一张为刚刚添加的虚拟网卡，我这是ying-nat:</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/07.png">
-<p>。。。。。。<br>3、安装完成之后，打开终端：输入ifconfig</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/08.png">
-<p>会发现有两张网卡,ens160为外网网卡。ens192为内网网卡，且没有地址。<br>我们需要进行以下操作：<br>4、切换到root权限，输入密码</p>
+            <h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><h3 id="一、添加一张虚拟网卡"><a href="#一、添加一张虚拟网卡" class="headerlink" title="一、添加一张虚拟网卡"></a>一、添加一张虚拟网卡</h3><p>点击服务器—-&gt;配置—-&gt;网络—-&gt;添加网络<br><img src="/2019/08/21/服务器里配置nat/01.png" alt="服务器里配置nat"><br>选择虚拟机<br><img src="/2019/08/21/服务器里配置nat/02.png" alt="服务器里配置nat"><br>选择创建vSphere标准交换机，注意：去掉vmnic1的对勾，使下面显示无适配器<br><img src="/2019/08/21/服务器里配置nat/03.png" alt="服务器里配置nat"><br><img src="/2019/08/21/服务器里配置nat/04.png" alt="服务器里配置nat"></p>
+<p>然后设置网络标签<br><img src="/2019/08/21/服务器里配置nat/05.png" alt="服务器里配置nat"></p>
+<h3 id="二、然后创建Linux虚拟机，并配置NAT："><a href="#二、然后创建Linux虚拟机，并配置NAT：" class="headerlink" title="二、然后创建Linux虚拟机，并配置NAT："></a>二、然后创建Linux虚拟机，并配置NAT：</h3><p>1、点击服务器—-&gt;入门—-&gt;创建新的虚拟机<br><img src="/2019/08/21/服务器里配置nat/06.png" alt="服务器里配置nat"><br>2、步骤和以前安装Linux步骤相似，不同之处在于这次需要安装两张网卡（一张外网网卡，一张内网网卡），一张为默认网卡，一张为刚刚添加的虚拟网卡，我这是ying-nat:<br><img src="/2019/08/21/服务器里配置nat/07.png" alt="服务器里配置nat"><br>。。。。。。<br>3、安装完成之后，打开终端：输入ifconfig<br><img src="/2019/08/21/服务器里配置nat/08.png" alt="服务器里配置nat"><br>会发现有两张网卡,ens160为外网网卡。ens192为内网网卡，且没有地址。<br>我们需要进行以下操作：<br>4、切换到root权限，输入密码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br></pre></td></tr></table></figure>
 
 <p>5、然后</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens160</span><br></pre></td></tr></table></figure>
 
-<p>将ONBOOT设为yes(网卡开机自启）</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/09.png">
-<p>然后按esc—&gt;:—-&gt;wq(保存设置）<br>6、然后更改ens192网卡设置：</p>
+<p>将ONBOOT设为yes(网卡开机自启）<br><img src="/2019/08/21/服务器里配置nat/09.png" alt="服务器里配置nat"><br>然后按esc—&gt;:—-&gt;wq(保存设置）<br>6、然后更改ens192网卡设置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens192</span><br></pre></td></tr></table></figure>
 
-<p>改为如下红框内容（注意：内网设置静态地址不加网关）：</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/10.png">
-<p>然后重启网络服务：</p>
+<p>改为如下红框内容（注意：内网设置静态地址不加网关）：<br><img src="/2019/08/21/服务器里配置nat/10.png" alt="服务器里配置nat"><br>然后重启网络服务：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
 
-<p>再输入：ifconfig,就可以看到ip了：</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/11.png">
-<p>7、防火墙配置（注意：如果关闭防火墙的话，这一步也可以不做）</p>
+<p>再输入：ifconfig,就可以看到ip了：<br><img src="/2019/08/21/服务器里配置nat/11.png" alt="服务器里配置nat"><br>7、防火墙配置（注意：如果关闭防火墙的话，这一步也可以不做）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -A FORWARD -i ens192 -j ACCEPT</span><br></pre></td></tr></table></figure>
 
 <p>8、修改数据包头信息（如果第一个不行的话可以换第二个试试</p>
@@ -243,10 +222,7 @@ ga('send', 'pageview');
 <p>保存，然后</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/root/heuet-srun-curl1.0.sh start</span><br></pre></td></tr></table></figure>
 
-<p>在这我也遇到了一个问题就是权限不够: 这儿改变新建文件的权限就可以了：我这改成了755</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/12.png">
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/13.png">
-
+<p>在这我也遇到了一个问题就是权限不够: 这儿改变新建文件的权限就可以了：我这改成了755<br><img src="/2019/08/21/服务器里配置nat/12.png" alt="服务器里配置nat"><br><img src="/2019/08/21/服务器里配置nat/13.png" alt="服务器里配置nat"></p>
 <p>到这，就连上网了。<br>2、复制配置信息</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/doc/dhcp-*/dhcpd.conf.example /etc/dhcp/dhcpd.conf</span><br></pre></td></tr></table></figure>
 
@@ -262,22 +238,17 @@ ga('send', 'pageview');
 <p>6、查看启动状态：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl status dhcpd</span><br><span class="line">netstat -uap | grep dhcpd</span><br></pre></td></tr></table></figure>
 
-<p>（1）我这遇到了一个问题：查看状态显示：</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/14.png">
-<p>这个时候，首先查看你的/etc/sysconfig/dhcpd的内容是否写对了，如果对了的话，重新输一下nat里的命令试试：</p>
+<p>（1）我这遇到了一个问题：查看状态显示：<br><img src="/2019/08/21/服务器里配置nat/14.png" alt="服务器里配置nat"><br>这个时候，首先查看你的/etc/sysconfig/dhcpd的内容是否写对了，如果对了的话，重新输一下nat里的命令试试：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A POSTROUTING -j SNAT --to-source 172.18.74.184（外网IP地址）</span><br></pre></td></tr></table></figure>
 
 <p>然后看一下 /proc/sys/net/ipv4/ip_forward中的内容是否为1。</p>
 <p>查看状态出现以上内容就成功了<br>四、创建需要连接nat的虚拟机<br>1、我们需要注意的是：<br>（1）网卡选择问题：一般情况下一张网卡就够了，网卡选择时选择你的nat网卡（我这是ying-nat)<br>   如果需要xshell的话就要选择两张网卡了，第一张选择物理网卡（VMNetwork)，第二张NAT网卡<br>（2）网卡配置问题：<br>一张的话，进入网卡：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens192</span><br></pre></td></tr></table></figure>
 
-<p>最后一项改为yes(开机自启）</p>
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/15.png">
-<p>两张的话，进入第一张：</p>
+<p>最后一项改为yes(开机自启）<br><img src="/2019/08/21/服务器里配置nat/15.png" alt="服务器里配置nat"><br>两张的话，进入第一张：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens160</span><br></pre></td></tr></table></figure>
 
-<img src="/2019/08/21/服务器里配置nat/08/21/服务器里配置nat/16.png">
-<p>改为static,onboot改为yes,然后设置一个ip地址，掩码和DNS,注意不要写网关。<br>第二张只改onboot=yes<br>然后重启网络：</p>
+<p><img src="/2019/08/21/服务器里配置nat/16.png" alt="服务器里配置nat"><br>改为static,onboot改为yes,然后设置一个ip地址，掩码和DNS,注意不要写网关。<br>第二张只改onboot=yes<br>然后重启网络：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure>
 
 <p>输入ifconfig看看是否能分配到dhcp里的ip,再ping一下百度，通的话就成功了</p>
@@ -301,7 +272,7 @@ ga('send', 'pageview');
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年08月23日 17:21</p>
+        <p>最后更新： 2019年08月23日 17:24</p>
         <p>原始链接： <a class="post-url" href="/2019/08/21/服务器里配置nat/" title="服务器里配置nat">http://www.devil.pub/2019/08/21/服务器里配置nat/</a></p>
         <footer>
             <a href="http://www.devil.pub">
