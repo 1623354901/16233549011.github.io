@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>vue 父子组件传值原理 | ying&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="卢莹的博客">
+  
+  <meta name="description" content="Vue组件之间传值（1）父组件向子组件传值理解1.1、Model部分新创建的vm实例可以看作一个组件，即父组件，在内部定义的components是它的子组件。 &amp;lt;script&amp;gt;     // 创建 Vue 实例，得到 ViewModel     var vm = new Vue({       el: &apos;#app&apos;,       data: {         msg: &apos;123 啊-">
+<meta name="keywords" content="vue,组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue 父子组件传值原理">
+<meta property="og:url" content="http://www.devil.pub/2019/08/23/vue-父子组件传值原理/index.html">
+<meta property="og:site_name" content="ying&#39;s blog">
+<meta property="og:description" content="Vue组件之间传值（1）父组件向子组件传值理解1.1、Model部分新创建的vm实例可以看作一个组件，即父组件，在内部定义的components是它的子组件。 &amp;lt;script&amp;gt;     // 创建 Vue 实例，得到 ViewModel     var vm = new Vue({       el: &apos;#app&apos;,       data: {         msg: &apos;123 啊-">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-23T08:59:35.162Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue 父子组件传值原理">
+<meta name="twitter:description" content="Vue组件之间传值（1）父组件向子组件传值理解1.1、Model部分新创建的vm实例可以看作一个组件，即父组件，在内部定义的components是它的子组件。 &amp;lt;script&amp;gt;     // 创建 Vue 实例，得到 ViewModel     var vm = new Vue({       el: &apos;#app&apos;,       data: {         msg: &apos;123 啊-">
+  
+  
+    <link rel="icon" href="images/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?true";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+  
+  <div style="display: none;">
+    <script src="//s22.cnzz.com/z_stat.php?id=true&web_id=true" language="JavaScript"></script>
+  </div>
+
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">卢莹的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>主页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>目录</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        卢莹的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个前端小菜鸟的笔记
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="卢莹的博客" target="_blank" href="https://www.devil.pub">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/1623354901/1623354901.github.io">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-vue-父子组件传值原理" class="article article-type-post" itemscope itemprop="blogPost">
+ 
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      vue 父子组件传值原理
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/vue/">vue</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-08-23
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+        
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="Vue组件之间传值"><a href="#Vue组件之间传值" class="headerlink" title="Vue组件之间传值"></a>Vue组件之间传值</h2><h3 id="（1）父组件向子组件传值"><a href="#（1）父组件向子组件传值" class="headerlink" title="（1）父组件向子组件传值"></a>（1）父组件向子组件传值</h3><p><strong>理解</strong><br>1.1、Model部分新创建的vm实例可以看作一个组件，即父组件，在内部定义的components是它的子组件。</p>
+<pre><code class="js">&lt;script&gt;
+    <span class="comment">// 创建 Vue 实例，得到 ViewModel</span>
+    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({
+      el: <span class="string">'#app'</span>,
+      data: {
+        msg: <span class="string">'123 啊-父组件中的数据'</span>
+      },
+      methods: {},
+
+      components:
+        com1: {
+          template: <span class="string">'&lt;h1&gt;这是子组件 --- {{ parentmsg }}&lt;/h1&gt;'</span>,
+          props: [<span class="string">'parentmsg'</span>],
+          methods: {
+            change() {
+              <span class="keyword">this</span>.parentmsg = <span class="string">'被修改了'</span>
+            }
+          }
+        }
+      }
+    });
+  &lt;<span class="regexp">/script&gt;</span></code></pre>
+<p>1.2、view部分 div#app 受父组件控制，里面的com1受子组件控制。</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">com1</span>&gt;</span><span class="tag">&lt;/<span class="name">com1</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
+<p>1.3、子组件中，默认无法访问父组件中 data 中的数据和 method中的方法<br><strong>那如何将父组件的值传递给子组件呢？</strong><br>2.1、在view部分通过属性绑定的（v-bind)的形式，把需要传给子组件的数据，以属性绑定的方式，传递给子组件</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">com1</span> <span class="attr">v-bind:parentmsg</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">com1</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></code></pre>
+<p>2.2、model部分，在子组件template中获取父组件传给子组件的属性，<br>不过要注意父组件传过来的属性，现在props数组中，定义一下，这样才能使用数组，不然会报错</p>
+<pre><code class="js">components: {
+        com1: 
+          template: <span class="string">'&lt;h1&gt;这是子组件 --- {{ parentmsg }}&lt;/h1&gt;'</span>,
+          props: [<span class="string">'parentmsg'</span>], 
+        }
+      }</code></pre>
+<p><strong>子组件中data数据与props数据的区别</strong></p>
+<ol>
+<li><ul>
+<li>子组件中的 data 数据，并不是通过 父组件传递过来的，而是子组件自身私有的，比如： 子组件通过 Ajax ，请求回来的数据，都可以放到 data 身上；  </li>
+<li>组件中的 所有 props 中的数据，都是通过 父组件传递给子组件的</li>
+</ul>
+</li>
+<li><ul>
+<li>data 上的数据，都是可读可写的；</li>
+<li>props 中的数据，都是只读的，无法重新赋值，赋值会报错</li>
+</ul>
+</li>
+</ol>
+<pre><code class="html"><span class="meta">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-2.4.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">head</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>
+    <span class="comment">&lt;!-- 父组件，可以在引用子组件的时候， 通过 属性绑定（v-bind:） 的形式, 把 需要传递给 子组件的数据，以属性绑定的形式，传递到子组件内部，供子组件使用 --&gt;</span>
+    <span class="tag">&lt;<span class="name">com1</span> <span class="attr">v-bind:parentmsg</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">com1</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+
+  <span class="tag">&lt;<span class="name">script</span>&gt;</span>
+<span class="javascript">    <span class="comment">// 创建 Vue 实例，得到 ViewModel</span></span>
+<span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({</span>
+<span class="javascript">      el: <span class="string">'#app'</span>,</span>
+      data: {
+<span class="javascript">        msg: <span class="string">'123 啊-父组件中的数据'</span></span>
+      },
+      methods: {},
+
+      components: {
+<span class="javascript">        <span class="comment">// 结论：经过演示，发现，子组件中，默认无法访问到 父组件中的 data 上的数据 和 methods 中的方法</span></span>
+        com1: {
+<span class="javascript">          data() { <span class="comment">// 注意： 子组件中的 data 数据，并不是通过 父组件传递过来的，而是子组件自身私有的，比如： 子组件通过 Ajax ，请求回来的数据，都可以放到 data 身上；</span></span>
+<span class="javascript">            <span class="comment">// data 上的数据，都是可读可写的；</span></span>
+<span class="javascript">            <span class="keyword">return</span> {</span>
+<span class="javascript">              title: <span class="string">'123'</span>,</span>
+<span class="javascript">              content: <span class="string">'qqq'</span></span>
+            }
+          },
+<span class="xml">          template: '<span class="tag">&lt;<span class="name">h1</span> @<span class="attr">click</span>=<span class="string">"change"</span>&gt;</span>这是子组件 --- <span class="comment">{{ parentmsg }}</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span>',</span>
+<span class="javascript">          <span class="comment">// 注意： 组件中的 所有 props 中的数据，都是通过 父组件传递给子组件的</span></span>
+<span class="javascript">          <span class="comment">// props 中的数据，都是只读的，无法重新赋值</span></span>
+<span class="javascript">          props: [<span class="string">'parentmsg'</span>], <span class="comment">// 把父组件传递过来的 parentmsg 属性，先在 props 数组中，定义一下，这样，才能使用这个数据</span></span>
+          directives: {},
+          filters: {},
+          components: {},
+          methods: {
+            change() {
+<span class="javascript">              <span class="keyword">this</span>.parentmsg = <span class="string">'被修改了'</span></span>
+            }
+          }
+        }
+      }
+    });
+  <span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">body</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="name">html</span>&gt;</span></code></pre>
+<h3 id="（3）父组件向子组件传递方法（子组件向父组件传值）"><a href="#（3）父组件向子组件传递方法（子组件向父组件传值）" class="headerlink" title="（3）父组件向子组件传递方法（子组件向父组件传值）"></a>（3）父组件向子组件传递方法（子组件向父组件传值）</h3><h4 id="父组件向子组件传递方法："><a href="#父组件向子组件传递方法：" class="headerlink" title="父组件向子组件传递方法："></a>父组件向子组件传递方法：</h4><ol>
+<li>model部分在父组件定义一个方法show(),</li>
+<li>view部分父组件通过事件绑定机制向子组件传递方法</li>
+<li>model部分子组件调用父组件方法（通过emit方法）</li>
+<li>view部分子组件点击触发该方法<h4 id="子组件向父组件传值：父组件向子组件传递方法的同时，把要发送给父组件的数据，在调用方法的时候当作参数传递进去；"><a href="#子组件向父组件传值：父组件向子组件传递方法的同时，把要发送给父组件的数据，在调用方法的时候当作参数传递进去；" class="headerlink" title="子组件向父组件传值：父组件向子组件传递方法的同时，把要发送给父组件的数据，在调用方法的时候当作参数传递进去；"></a>子组件向父组件传值：父组件向子组件传递方法的同时，把要发送给父组件的数据，在调用方法的时候当作参数传递进去；</h4></li>
+</ol>
+<pre><code class="html"><span class="meta">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue-2.4.0.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">head</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>
+    <span class="comment">&lt;!-- 父组件向子组件 传递 方法，使用的是 事件绑定机制； v-on, 当我们自定义了 一个 事件属性之后，那么，子组件就能够，通过某些方式，来调用 传递进去的 这个 方法了 --&gt;</span>
+    <span class="tag">&lt;<span class="name">com2</span> @<span class="attr">func</span>=<span class="string">"show"</span>&gt;</span><span class="tag">&lt;/<span class="name">com2</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+
+  <span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"tmpl"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是 子组件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"这是子组件中的按钮 - 点击它，触发 父组件传递过来的 func 方法"</span> @<span class="attr">click</span>=<span class="string">"myclick"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">template</span>&gt;</span>
+
+  <span class="tag">&lt;<span class="name">script</span>&gt;</span>
+
+<span class="javascript">    <span class="comment">// 定义了一个字面量类型的 组件模板对象</span></span>
+<span class="javascript">    <span class="keyword">var</span> com2 = {</span>
+<span class="javascript">      template: <span class="string">'#tmpl'</span>, <span class="comment">// 通过指定了一个 Id, 表示 说，要去加载 这个指定Id的 template 元素中的内容，当作 组件的HTML结构</span></span>
+      data() {
+<span class="javascript">        <span class="keyword">return</span> {</span>
+<span class="javascript">          sonmsg: { <span class="attr">name</span>: <span class="string">'小头儿子'</span>, <span class="attr">age</span>: <span class="number">6</span> }</span>
+        }
+      },
+      methods: {
+        myclick() {
+<span class="javascript">          <span class="comment">// 当点击子组件的按钮的时候，如何 拿到 父组件传递过来的 func 方法，并调用这个方法？？？</span></span>
+<span class="javascript">          <span class="comment">//  emit 英文原意： 是触发，调用、发射的意思</span></span>
+<span class="javascript">          <span class="comment">// this.$emit('func123', 123, 456)</span></span>
+<span class="javascript">          <span class="keyword">this</span>.$emit(<span class="string">'func'</span>, <span class="keyword">this</span>.sonmsg)</span>
+        }
+      }
+    }
+
+
+<span class="javascript">    <span class="comment">// 创建 Vue 实例，得到 ViewModel</span></span>
+<span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({</span>
+<span class="javascript">      el: <span class="string">'#app'</span>,</span>
+      data: {
+<span class="javascript">        datamsgFormSon: <span class="literal">null</span></span>
+      },
+      methods: {
+        show(data) {
+<span class="javascript">          <span class="comment">// console.log('调用了父组件身上的 show 方法: --- ' + data)</span></span>
+<span class="javascript">          <span class="comment">// console.log(data);</span></span>
+<span class="javascript">          <span class="keyword">this</span>.datamsgFormSon = data</span>
+        }
+      },
+
+      components: {
+        com2
+<span class="javascript">        <span class="comment">// com2: com2</span></span>
+      }
+    });
+  <span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">body</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="name">html</span>&gt;</span></code></pre>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年08月23日 16:59</p>
+        <p>原始链接： <a class="post-url" href="/2019/08/23/vue-父子组件传值原理/" title="vue 父子组件传值原理">http://www.devil.pub/2019/08/23/vue-父子组件传值原理/</a></p>
+        <footer>
+            <a href="http://www.devil.pub">
+                <img src="/images/logo.png" alt="卢莹">
+                卢莹
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        心意领了
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.devil.pub/2019/08/23/vue-父子组件传值原理/&title=《vue 父子组件传值原理》 — ying's blog&pic=http://www.devil.pubimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.devil.pub/2019/08/23/vue-父子组件传值原理/&title=《vue 父子组件传值原理》 — ying's blog&source=一个前端小菜鸟的笔记" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.devil.pub/2019/08/23/vue-父子组件传值原理/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue 父子组件传值原理》 — ying's blog&url=http://www.devil.pub/2019/08/23/vue-父子组件传值原理/&via=http://www.devil.pub" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.devil.pub/2019/08/23/vue-父子组件传值原理/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.devil.pub/2019/08/23/vue-父子组件传值原理/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/vue/" class="color4">vue</a>
+      
+    <a href="/tags/组件/" class="color3">组件</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vue组件之间传值"><span class="post-toc-text">Vue组件之间传值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（1）父组件向子组件传值"><span class="post-toc-text">（1）父组件向子组件传值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（3）父组件向子组件传递方法（子组件向父组件传值）"><span class="post-toc-text">（3）父组件向子组件传递方法（子组件向父组件传值）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#父组件向子组件传递方法："><span class="post-toc-text">父组件向子组件传递方法：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#子组件向父组件传值：父组件向子组件传递方法的同时，把要发送给父组件的数据，在调用方法的时候当作参数传递进去；"><span class="post-toc-text">子组件向父组件传值：父组件向子组件传递方法的同时，把要发送给父组件的数据，在调用方法的时候当作参数传递进去；</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/08/23/vue-组件应用-评论案例-实现评论的展示，添加/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          vue 组件应用--评论案例 实现评论的展示，添加
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/08/23/vue-钩子函数实现小球半场动画-加入购物车的实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">vue-钩子函数实现小球半场动画--加入购物车的实现</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTExNC8xNzYzOQ==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 卢莹<br>
+      </p>
+    </div>
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/01/2018 18:18:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://www.devil.pub",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux/">Linux</a><a class="category-link" href="/categories/metron/">metron</a><a class="category-link" href="/categories/python/">python</a><a class="category-link" href="/categories/vue/">vue</a><a class="category-link" href="/categories/大数据/">大数据</a><a class="category-link" href="/categories/服务器-NAT/">服务器 NAT</a><a class="category-link" href="/categories/网络/">网络</a><a class="category-link" href="/categories/虚拟机/">虚拟机</a><a class="category-link" href="/categories/路由器/">路由器</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>主页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>目录</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
