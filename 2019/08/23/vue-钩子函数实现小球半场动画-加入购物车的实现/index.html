@@ -202,35 +202,35 @@ ga('send', 'pageview');
 
   <span class="tag">&lt;<span class="name">script</span>&gt;</span>
 
-<span class="javascript">    <span class="comment">// 创建 Vue 实例，得到 ViewModel</span></span>
-<span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({</span>
-<span class="javascript">      el: <span class="string">'#app'</span>,</span>
+    // 创建 Vue 实例，得到 ViewModel
+    var vm = new Vue({
+      el: '#app',
       data: {
-<span class="javascript">        flag: <span class="literal">false</span></span>
+        flag: false
       },
       methods: {
-<span class="javascript">        <span class="comment">// 注意： 动画钩子函数的第一个参数：el，表示 要执行动画的那个DOM元素，是个原生的 JS DOM对象</span></span>
-<span class="javascript">        <span class="comment">// 大家可以认为 ， el 是通过 document.getElementById('') 方式获取到的原生JS DOM对象</span></span>
+        // 注意： 动画钩子函数的第一个参数：el，表示 要执行动画的那个DOM元素，是个原生的 JS DOM对象
+        // 大家可以认为 ， el 是通过 document.getElementById('') 方式获取到的原生JS DOM对象
         beforeEnter(el){
-<span class="javascript">          <span class="comment">// beforeEnter 表示动画入场之前，此时，动画尚未开始，可以 在 beforeEnter 中，设置元素开始动画之前的起始样式</span></span>
-<span class="javascript">          <span class="comment">// 设置小球开始动画之前的，起始位置</span></span>
-<span class="javascript">          el.style.transform = <span class="string">"translate(0, 0)"</span></span>
+          // beforeEnter 表示动画入场之前，此时，动画尚未开始，可以 在 beforeEnter 中，设置元素开始动画之前的起始样式
+          // 设置小球开始动画之前的，起始位置
+          el.style.transform = "translate(0, 0)"
         },
         enter(el, done){
-<span class="javascript">          <span class="comment">// 这句话，没有实际的作用，但是，如果不写，出不来动画效果；</span></span>
-<span class="javascript">          <span class="comment">// 可以认为 el.offsetWidth 会强制动画刷新</span></span>
+          // 这句话，没有实际的作用，但是，如果不写，出不来动画效果；
+          // 可以认为 el.offsetWidth 会强制动画刷新
           el.offsetWidth
-<span class="javascript">          <span class="comment">// enter 表示动画 开始之后的样式，这里，可以设置小球完成动画之后的，结束状态</span></span>
-<span class="javascript">          el.style.transform = <span class="string">"translate(150px, 450px)"</span></span>
-<span class="javascript">          el.style.transition = <span class="string">'all 1s ease'</span></span>
+          // enter 表示动画 开始之后的样式，这里，可以设置小球完成动画之后的，结束状态
+          el.style.transform = "translate(150px, 450px)"
+          el.style.transition = 'all 1s ease'
 
-<span class="javascript">          <span class="comment">// 这里的 done， 起始就是 afterEnter 这个函数，也就是说：done 是 afterEnter 函数的引用</span></span>
+          // 这里的 done， 起始就是 afterEnter 这个函数，也就是说：done 是 afterEnter 函数的引用
           done()
         },
         afterEnter(el){
-<span class="javascript">          <span class="comment">// 动画完成之后，会调用 afterEnter</span></span>
-<span class="javascript">          <span class="comment">// console.log('ok')</span></span>
-<span class="javascript">          <span class="keyword">this</span>.flag = !<span class="keyword">this</span>.flag</span>
+          // 动画完成之后，会调用 afterEnter
+          // console.log('ok')
+          this.flag = !this.flag
         }
       }
     });
