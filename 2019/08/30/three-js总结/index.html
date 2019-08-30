@@ -9,7 +9,7 @@
     <meta name="keywords" content="卢莹的博客">
   
   <meta name="description" content="一、three.js简介  three.js，即three + js 。three代表3D的意思，js代表  JavaScript的意思。也就说：three.js是使用JavaScript来写3D程序的意思。 二、项目需要  这个项目要实现的是在大屏上对人脸识别过程进行数据可视化展示，我们通过一些代码，更形象的展示，让人们能够直观的看到这一过程，更容易理解。 三、入门创建一个场景：绿色正方体 1、">
-<meta name="keywords" content="First,Second">
+<meta name="keywords" content="JavaScript,three.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="three.js总结">
 <meta property="og:url" content="http://www.devil.pub/2019/08/30/three-js总结/index.html">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://techbrood.com/ueditor/php/upload/image/20160525/1464141326848754.png">
 <meta property="og:image" content="http://www.hewebgl.com/attached/image/20130810/20130810150021_257.jpg">
-<meta property="og:updated_time" content="2019-08-30T13:03:10.139Z">
+<meta property="og:updated_time" content="2019-08-30T13:06:38.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="three.js总结">
 <meta name="twitter:description" content="一、three.js简介  three.js，即three + js 。three代表3D的意思，js代表  JavaScript的意思。也就说：three.js是使用JavaScript来写3D程序的意思。 二、项目需要  这个项目要实现的是在大屏上对人脸识别过程进行数据可视化展示，我们通过一些代码，更形象的展示，让人们能够直观的看到这一过程，更容易理解。 三、入门创建一个场景：绿色正方体 1、">
@@ -147,6 +147,13 @@ ga('send', 'pageview');
     <div class="post-title-bar">
       <ul>
           
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/three.js/">three.js</a>
+                  
+              </li>
+          
         <li>
           <i class="fa fa-calendar"></i>  2019-08-30
         </li>
@@ -174,7 +181,7 @@ ga('send', 'pageview');
 <h2 id="2、相机："><a href="#2、相机：" class="headerlink" title="2、相机："></a>2、相机：</h2><p>另一个组建是相机，相机决定了场景中那个角度的景色会显示出来。相机就像人的眼睛一样，人站在不同位置，抬头或者低头都能够看到不同的景色。</p>
 <p>场景只有一种，但是相机却又很多种。和现实中一样，不同的相机确定了呈相的各个方面。比如有的相机适合人像，有的相机适合风景，专业的摄影师根据实际用途不一样，选择不同的相机。对程序员来说，只要设置不同的相机参数，就能够让相机产生不一样的效果。<br><strong>这里使用最常见的远景相机（PerspectiveCamera），也就是类似于人眼观察的方式。第一个属性75设置的是视角（field of view）。</strong><br>第二个属性设置的是相机拍摄面的长宽比（aspect ratio）。我们几乎总是会使用元素的宽除以高，否则会出现挤压变形。<br>接下来的2个属性是近裁剪面（near clipping plane） 和 远裁剪面（far clipping plane）。下面这张图可以帮助你理解：<br><img src="https://techbrood.com/ueditor/php/upload/image/20160525/1464141326848754.png" alt="image"> </p>
 <p>这几个参数所限定的绿色3D空间被称之为视椎体（View Frustum），用来裁剪视图，在该视锥体以外的物体将不会被渲染。</p>
-<h2 id="3、渲染器"><a href="#3、渲染器" class="headerlink" title="3、渲染器"></a>3、渲染器</h2><p>渲染器决定了渲染的结果应该画在页面的什么元素上面，并且以怎样的方式来绘制。<br>除了创建renderer实例，我们还需要设置渲染空间的尺寸，一般就使用目标屏幕的宽高（window.innerWidth和window.innerHeight），也可以给定一个小尺寸。<br>如果你想保持渲染空间的尺寸，但使用一个较低的分辨率，你可以在调用setSize的时候设置参数updateStyle为false，比如 setSize(window.innerWidth/2, window.innerHeight/2, false)   将使用1/2分辨率来绘制你的应用程序，假定<canvas>为100%的宽高。<br>最后，我们把 renderer 元素添加到HTML文档中。这里是一个 <canvas> 元素，渲染器用来显示场景。  </canvas></canvas></p>
+<h2 id="3、渲染器"><a href="#3、渲染器" class="headerlink" title="3、渲染器"></a>3、渲染器</h2><p>渲染器决定了渲染的结果应该画在页面的什么元素上面，并且以怎样的方式来绘制。<br>除了创建renderer实例，我们还需要设置渲染空间的尺寸，一般就使用目标屏幕的宽高（window.innerWidth和window.innerHeight），也可以给定一个小尺寸。<br>如果你想保持渲染空间的尺寸，但使用一个较低的分辨率，你可以在调用setSize的时候设置参数updateStyle为false，比如 setSize(window.innerWidth/2, window.innerHeight/2, false)   将使用1/2分辨率来绘制你的应用程序，假定&lt; canvas&gt;为100%的宽高。<br>最后，我们把 renderer 元素添加到HTML文档中。这里是一个 <canvas> 元素，渲染器用来显示场景。  </canvas></p>
 <h2 id="4、添加物体到场景中"><a href="#4、添加物体到场景中" class="headerlink" title="4、添加物体到场景中"></a>4、添加物体到场景中</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> geometry = <span class="keyword">new</span> THREE.BoxGeometry( <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span> );</span><br><span class="line"><span class="keyword">var</span> material = <span class="keyword">new</span> THREE.MeshBasicMaterial( &#123; <span class="attr">color</span>: <span class="number">0x00ff00</span> &#125; );</span><br><span class="line"><span class="keyword">var</span> cube = <span class="keyword">new</span> THREE.Mesh( geometry, material );</span><br><span class="line">scene.add( cube );</span><br><span class="line"></span><br><span class="line">camera.position.z = <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
 
 <p>为了创建一个立方体，我们需要使用盒子模型（BoxGeometry），这是一个包含立方体所有顶点和填充面的对象。<br>除了这个几何模型（geometry）外，我们还需要一个材料（material）来对其着色。Three.js支持多种材料，现在我们只使用 网孔基础材料（MeshBasicMaterial）。   所有材料都含有一个属性对象。这里简单起见，我们只提供了颜色值为0x00ff00，表示绿色。这和CSS和Photoshop中16进制颜色值一样。<br>第3件事是我们需要一个网孔(Mesh)。网孔是用来承载几何模型的一个对象，还可以把材料应用到它上面，然后添加到场景中完成旋转动画。<br>默认情况下，当我们调用 scene.add() 时，对象将被添加到原点处，即坐标点(0,0,0)，这将导致相机和立方体发生空间重叠。为了避免这样，我们把相机（camera）的位置移出来一些。</p>
@@ -189,7 +196,7 @@ ga('send', 'pageview');
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年08月30日 21:03</p>
+        <p>最后更新： 2019年08月30日 21:06</p>
         <p>原始链接： <a class="post-url" href="/2019/08/30/three-js总结/" title="three.js总结">http://www.devil.pub/2019/08/30/three-js总结/</a></p>
         <footer>
             <a href="http://www.devil.pub">
@@ -247,7 +254,7 @@ ga('send', 'pageview');
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.devil.pub/2019/08/30/three-js总结/&title=《three.js总结》 — 卢莹的博客&pic=https://www.devil.pub/images/feng/" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.devil.pub/2019/08/30/three-js总结/&title=《three.js总结》 — 卢莹的博客&pic=http://www.devil.pubimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -294,9 +301,9 @@ ga('send', 'pageview');
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/First/" class="color1">First</a>
+    <a href="/tags/JavaScript/" class="color1">JavaScript</a>
       
-    <a href="/tags/Second/" class="color2">Second</a>
+    <a href="/tags/three.js/" class="color4">three.js</a>
       
   </li>
 
@@ -418,10 +425,10 @@ setInterval("createtime()",250);
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/Linux/">Linux</a><a class="category-link" href="/categories/Vue/">Vue</a><a class="category-link" href="/categories/metron/">metron</a><a class="category-link" href="/categories/python/">python</a><a class="category-link" href="/categories/vue/">vue</a><a class="category-link" href="/categories/大数据/">大数据</a><a class="category-link" href="/categories/服务器-NAT/">服务器 NAT</a><a class="category-link" href="/categories/网络/">网络</a><a class="category-link" href="/categories/虚拟机/">虚拟机</a><a class="category-link" href="/categories/路由器/">路由器</a>
+            <a class="category-link" href="/categories/Linux/">Linux</a><a class="category-link" href="/categories/Vue/">Vue</a><a class="category-link" href="/categories/metron/">metron</a><a class="category-link" href="/categories/python/">python</a><a class="category-link" href="/categories/three-js/">three.js</a><a class="category-link" href="/categories/vue/">vue</a><a class="category-link" href="/categories/大数据/">大数据</a><a class="category-link" href="/categories/服务器-NAT/">服务器 NAT</a><a class="category-link" href="/categories/网络/">网络</a><a class="category-link" href="/categories/虚拟机/">虚拟机</a><a class="category-link" href="/categories/路由器/">路由器</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/First/" style="font-size: 10px;">First</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Second/" style="font-size: 10px;">Second</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
+            <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -454,7 +461,7 @@ setInterval("createtime()",250);
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/First/" style="font-size: 10px;">First</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Second/" style="font-size: 10px;">Second</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
+            <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
         </div>
     </div>
 </div>
