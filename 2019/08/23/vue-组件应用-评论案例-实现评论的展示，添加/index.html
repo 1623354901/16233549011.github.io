@@ -221,66 +221,66 @@ ga('send', 'pageview');
 
   <span class="tag">&lt;<span class="name">script</span>&gt;</span>
 
-    var commentBox = {
-      template: '#tmpl',
+<span class="javascript">    <span class="keyword">var</span> commentBox = {</span>
+<span class="javascript">      template: <span class="string">'#tmpl'</span>,</span>
       data() {
-        return {
-          user: '',
-          content: '',
+<span class="javascript">        <span class="keyword">return</span> {</span>
+<span class="javascript">          user: <span class="string">''</span>,</span>
+<span class="javascript">          content: <span class="string">''</span>,</span>
         }
       },
 
       methods: {
-        postComment() { // 发表评论的方法
-          // 分析：发表评论的业务逻辑
-          // 1. 评论数据存到哪里去？？？   存放到了 localStorage 中  localStorage.setItem('cmts', '')
-          // 2. 先组织出一个最新的评论数据对象
-          // 3. 想办法，把 第二步中，得到的评论对象，保存到 localStorage 中：
-          //  3.1 localStorage 只支持存放字符串数据， 要先调用 JSON.stringify 
-          //  3.2 在保存 最新的 评论数据之前，要先从 localStorage 获取到之前的评论数据（string）， 转换为 一个  数组对象， 然后，把最新的评论， push 到这个数组
-          //  3.3 如果获取到的 localStorage 中的 评论字符串，为空不存在， 则  可以 返回一个 '[]'  让 JSON.parse 去转换
-          //  3.4  把 最新的  评论列表数组，再次调用 JSON.stringify 转为  数组字符串，然后调用 localStorage.setItem()
+<span class="javascript">        postComment() { <span class="comment">// 发表评论的方法</span></span>
+<span class="javascript">          <span class="comment">// 分析：发表评论的业务逻辑</span></span>
+<span class="javascript">          <span class="comment">// 1. 评论数据存到哪里去？？？   存放到了 localStorage 中  localStorage.setItem('cmts', '')</span></span>
+<span class="javascript">          <span class="comment">// 2. 先组织出一个最新的评论数据对象</span></span>
+<span class="javascript">          <span class="comment">// 3. 想办法，把 第二步中，得到的评论对象，保存到 localStorage 中：</span></span>
+<span class="javascript">          <span class="comment">//  3.1 localStorage 只支持存放字符串数据， 要先调用 JSON.stringify </span></span>
+<span class="javascript">          <span class="comment">//  3.2 在保存 最新的 评论数据之前，要先从 localStorage 获取到之前的评论数据（string）， 转换为 一个  数组对象， 然后，把最新的评论， push 到这个数组</span></span>
+<span class="javascript">          <span class="comment">//  3.3 如果获取到的 localStorage 中的 评论字符串，为空不存在， 则  可以 返回一个 '[]'  让 JSON.parse 去转换</span></span>
+<span class="javascript">          <span class="comment">//  3.4  把 最新的  评论列表数组，再次调用 JSON.stringify 转为  数组字符串，然后调用 localStorage.setItem()</span></span>
 
-          var comment = { id: Date.now(), user: this.user, content: this.content }
+<span class="javascript">          <span class="keyword">var</span> comment = { <span class="attr">id</span>: <span class="built_in">Date</span>.now(), <span class="attr">user</span>: <span class="keyword">this</span>.user, <span class="attr">content</span>: <span class="keyword">this</span>.content }</span>
 
-          // 从 localStorage 中获取所有的评论
-          var list = JSON.parse(localStorage.getItem('cmts') || '[]')
+<span class="javascript">          <span class="comment">// 从 localStorage 中获取所有的评论</span></span>
+<span class="javascript">          <span class="keyword">var</span> list = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'cmts'</span>) || <span class="string">'[]'</span>)</span>
           list.unshift(comment)
-          // 重新保存最新的 评论数据
-          localStorage.setItem('cmts', JSON.stringify(list))
+<span class="javascript">          <span class="comment">// 重新保存最新的 评论数据</span></span>
+<span class="javascript">          localStorage.setItem(<span class="string">'cmts'</span>, <span class="built_in">JSON</span>.stringify(list))</span>
 
-          this.user = this.content = ''
+<span class="javascript">          <span class="keyword">this</span>.user = <span class="keyword">this</span>.content = <span class="string">''</span></span>
 
-          // this.loadComments() // ?????
-          this.$emit('func')
+<span class="javascript">          <span class="comment">// this.loadComments() // ?????</span></span>
+<span class="javascript">          <span class="keyword">this</span>.$emit(<span class="string">'func'</span>)</span>
         }
       }
     }
 
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
+<span class="javascript">    <span class="comment">// 创建 Vue 实例，得到 ViewModel</span></span>
+<span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue({</span>
+<span class="javascript">      el: <span class="string">'#app'</span>,</span>
       data: {
         list: [
-          { id: Date.now(), user: '李白', content: '天生我材必有用' },
-          { id: Date.now(), user: '江小白', content: '劝君更尽一杯酒' },
-          { id: Date.now(), user: '小马', content: '我姓马， 风吹草低见牛羊的马' }
+<span class="javascript">          { <span class="attr">id</span>: <span class="built_in">Date</span>.now(), <span class="attr">user</span>: <span class="string">'李白'</span>, <span class="attr">content</span>: <span class="string">'天生我材必有用'</span> },</span>
+<span class="javascript">          { <span class="attr">id</span>: <span class="built_in">Date</span>.now(), <span class="attr">user</span>: <span class="string">'江小白'</span>, <span class="attr">content</span>: <span class="string">'劝君更尽一杯酒'</span> },</span>
+<span class="javascript">          { <span class="attr">id</span>: <span class="built_in">Date</span>.now(), <span class="attr">user</span>: <span class="string">'小马'</span>, <span class="attr">content</span>: <span class="string">'我姓马， 风吹草低见牛羊的马'</span> }</span>
         ]
       },
-      beforeCreate(){ // 注意：这里不能调用 loadComments 方法，因为在执行这个钩子函数的时候，data 和 methods 都还没有被初始化好
+<span class="javascript">      beforeCreate(){ <span class="comment">// 注意：这里不能调用 loadComments 方法，因为在执行这个钩子函数的时候，data 和 methods 都还没有被初始化好</span></span>
 
       },
       created(){
-        this.loadComments()
+<span class="javascript">        <span class="keyword">this</span>.loadComments()</span>
       },
       methods: {
-        loadComments() { // 从本地的 localStorage 中，加载评论列表
-          var list = JSON.parse(localStorage.getItem('cmts') || '[]')
-          this.list = list
+<span class="javascript">        loadComments() { <span class="comment">// 从本地的 localStorage 中，加载评论列表</span></span>
+<span class="javascript">          <span class="keyword">var</span> list = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'cmts'</span>) || <span class="string">'[]'</span>)</span>
+<span class="javascript">          <span class="keyword">this</span>.list = list</span>
         }
       },
       components: {
-        'cmt-box': commentBox
+<span class="javascript">        <span class="string">'cmt-box'</span>: commentBox</span>
       }
     });
   <span class="tag">&lt;/<span class="name">script</span>&gt;</span>
