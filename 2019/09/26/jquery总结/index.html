@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>jquery总结 | 卢莹的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="卢莹的博客">
+  
+  <meta name="description" content="总结123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102">
+<meta name="keywords" content="jquery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery总结">
+<meta property="og:url" content="http://www.devil.pub/2019/09/26/jquery总结/index.html">
+<meta property="og:site_name" content="卢莹的博客">
+<meta property="og:description" content="总结123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-26T07:56:41.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery总结">
+<meta name="twitter:description" content="总结123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102">
+  
+  
+    <link rel="icon" href="https://www.devil.pub/images/hhh.png">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?true";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+  
+  <div style="display: none;">
+    <script src="//s22.cnzz.com/z_stat.php?id=true&web_id=true" language="JavaScript"></script>
+  </div>
+
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">卢莹的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>主页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>目录</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        卢莹的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个前端小菜鸟的笔记
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="卢莹的博客" target="_blank" href="https://www.devil.pub">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/1623354901/1623354901.github.io">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-jquery总结" class="article article-type-post" itemscope itemprop="blogPost">
+ 
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      jquery总结
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-09-26
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+        
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line">   * 选择器:</span><br><span class="line">   * id选择器  $(&quot;#id属性的值&quot;)</span><br><span class="line">   * 标签选择器 $(&quot;标签名字&quot;)</span><br><span class="line">   * 类选择器   $(&quot;.类样式的名字&quot;)</span><br><span class="line">   * 交集选择器  $(&quot;标签.类样式的名字&quot;)----&gt;标签+类选择器</span><br><span class="line">   * 并集选择器  $(&quot;选择器,选择器,选择器,...&quot;)----&gt;多条件选择器</span><br><span class="line">   * 都可以看成是筛选器</span><br><span class="line">   * 索引选择器  $(&quot;选择器:eq(索引的值)&quot;)</span><br><span class="line">   * 奇数筛选器  $(&quot;选择器:odd&quot;)</span><br><span class="line">   * 偶数筛选器  $(&quot;选择器:even&quot;)</span><br><span class="line">   * 筛选器   $(&quot;选择器:lt(索引)&quot;)---&gt;获取小于这个索引的元素</span><br><span class="line">   *          $(&quot;选择器:gt(索引)&quot;)---&gt;获取大于这个索引的元素</span><br><span class="line">   * 其他选择器</span><br><span class="line">   * $(&quot;选择器:last&quot;)----&gt;最后一个</span><br><span class="line">   * $(&quot;选择器:first&quot;)----&gt;第一个</span><br><span class="line">   * 获取当前元素的其他的方法</span><br><span class="line">   * 当前元素.next()----&gt;下一个兄弟元素</span><br><span class="line">   * 当前元素.nextAll()---&gt;后面所有的兄弟元素</span><br><span class="line">   * 当前元素.prev()----&gt;前一个兄弟元素</span><br><span class="line">   * 当前元素.prevAll()--&gt;前面所有的兄弟元素</span><br><span class="line">   * 当前元素.siblings()--&gt;所有的兄弟元素(没有自己)</span><br><span class="line">   * 当前元素.parent()---&gt;父级元素</span><br><span class="line">   * 当前元素.children()---&gt;当前元素中所有的子元素(直接的子元素)</span><br><span class="line">   * 当前元素.find(&quot;选择器&quot;)---&gt;从当前元素中找某个或者是某些元素</span><br><span class="line">   *</span><br><span class="line">   * 方法:</span><br><span class="line">   * .val()----&gt;操作表单元素的value属性,可以获取也可以设置</span><br><span class="line">   * .text()----&gt;操作元素中间的文本内容的,相当于innerText</span><br><span class="line">   * .html()----&gt;操作元素中的html代码及内容,相当于innerHTML</span><br><span class="line">   * .css()-----&gt;操作元素的样式</span><br><span class="line">   * .addClass()---&gt;添加类样式</span><br><span class="line">   * .removeClass()--&gt;移除类样式</span><br><span class="line">   * .hasClass()---判断元素是否应用了类样式</span><br><span class="line">   * .index()----&gt;元素的索引</span><br><span class="line">   *</span><br><span class="line">   *</span><br><span class="line">   * 下面的这些动画的方法,一般都可以使用两个参数,参数1:时间, 参数2:回调函数</span><br><span class="line">   * 参数---时间:1000毫秒---1秒</span><br><span class="line">   * 参数---时间:slow---慢,normal---正常,fast---快</span><br><span class="line">   * .show()---&gt;显示</span><br><span class="line">   * .hide()---&gt;隐藏</span><br><span class="line">   * .stop()----&gt;停止动画</span><br><span class="line">   * animate()---&gt;动画的方法</span><br><span class="line">   * slideUp()----&gt;滑入</span><br><span class="line">   * slideDown()---&gt;滑出</span><br><span class="line">   * slideToggle()---&gt;切换滑入和滑出</span><br><span class="line">   * fadeIn()----&gt;淡入</span><br><span class="line">   * fadeOut()---&gt;淡出</span><br><span class="line">   * fadeToggle()---&gt;切换淡入淡出</span><br><span class="line">   * fadeTo(时间,透明度的值)</span><br><span class="line">   *</span><br><span class="line">   * 元素创建:</span><br><span class="line">   * $(&quot;html的代码&quot;)</span><br><span class="line">   * 元素的添加</span><br><span class="line">   * 父级元素.append(子级元素);</span><br><span class="line">   * 子级元素.appendTo(父级元素);</span><br><span class="line">   *</span><br><span class="line">   * clone()克隆元素</span><br><span class="line">   * 父级元素2.append($(&quot;父级元素1&gt;子级元素&quot;));,相当于剪切过去的</span><br><span class="line"></span><br><span class="line"> * 元素的创建</span><br><span class="line">   * 1.</span><br><span class="line">   * $(&quot;html代码及内容&quot;)</span><br><span class="line">   * 对象.html(&quot;html代码及内容&quot;)</span><br><span class="line">   *</span><br><span class="line">   * 元素的添加</span><br><span class="line">   * 父级元素.append(子级元素);</span><br><span class="line">   * 子级元素.appendTo(父级元素);</span><br><span class="line">   *</span><br><span class="line">   * 父级元素.prepend(子级元素);加到第一个子级元素的前面</span><br><span class="line">   * 子级元素.prependTo(父级元素);加到第一个子级元素的前面</span><br><span class="line">   * 父级元素.after(元素);当前父级元素后面的第一个兄弟元素的位置</span><br><span class="line">   * 父级元素.before(元素);前父级元素前面的一个兄弟元素的位置</span><br><span class="line">   *</span><br><span class="line">   * 如何移除父级元素中的子级元素</span><br><span class="line">   * 父级元素.html(&quot;&quot;);</span><br><span class="line">   * 父级元素.empty();清空</span><br><span class="line">   * 父级元素.remove();----&gt;自杀,自己被删除</span><br><span class="line">   *</span><br><span class="line">   * val()方法的使用,可以设置表单的value属性值</span><br><span class="line">   * val()方法也可以设置下拉框某个option选中</span><br><span class="line">   *</span><br><span class="line">   * 自定义属性的操作</span><br><span class="line">   * attr(&quot;属性&quot;,&quot;值&quot;);</span><br><span class="line">   * removeAttr(&quot;属性&quot;);移除这个自定义属性</span><br><span class="line">   * attr(&quot;属性&quot;);获取该属性的值</span><br><span class="line">   *</span><br><span class="line">   * 元素选中操作</span><br><span class="line">   * prop()方法</span><br><span class="line">   * prop(&quot;checked&quot;);----&gt;布尔类型</span><br><span class="line">   * prop(&quot;checked&quot;,布尔类型的值);</span><br><span class="line">   *</span><br><span class="line">   * 元素的样式的操作</span><br><span class="line">   *</span><br><span class="line">   * 设置或者获取元素的宽和高</span><br><span class="line">   * .width()---&gt;获取 .width(值);---设置宽度</span><br><span class="line">   * .height();--&gt;获取 .height(值);--设置高度</span><br><span class="line">   *</span><br><span class="line">   * 获取或者是设置元素的left和top</span><br><span class="line">   * .offset()-----&gt;返回的是一个对象,该对象中两个属性,left和top</span><br><span class="line">   * 在offset()方法获取left或者是top的时候是包括margin的值</span><br><span class="line">   * .offset(&#123;&quot;left&quot;:值,&quot;top&quot;:值&#125;);----&gt;设置</span><br><span class="line">   * .scrollLeft()----&gt;向左卷曲出去的距离</span><br><span class="line">   * .scrollTop()----&gt;向上卷曲出去的距离</span><br><span class="line">   *</span><br><span class="line">   * 事件的绑定</span><br><span class="line">   * 元素.事件名字(事件处理函数);</span><br><span class="line">   * 元素.bind(&quot;事件名字&quot;,事件处理函数);</span><br><span class="line">   * 元素.bind(&#123;&quot;事件名字&quot;:事件处理函数&#125;);</span><br><span class="line">   * 父元素.delegate(&quot;子元素的选择器&quot;,&quot;事件名字&quot;,事件处理函数);</span><br><span class="line">   * 最终事件是在子元素上</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* * 1.</span><br><span class="line">   * 对象.事件名字(事件处理函数);</span><br><span class="line">   * $(&quot;#btn&quot;).click(function()&#123;&#125;);</span><br><span class="line">   * 2.</span><br><span class="line">   * 对象.bind(&quot;事件名字&quot;,事件处理函数);</span><br><span class="line">   * $(&quot;#btn&quot;).bind(&quot;click&quot;,function()&#123;&#125;);</span><br><span class="line">   * 3.</span><br><span class="line">   * 对象.delegate(&quot;选择器&quot;,&quot;事件名字&quot;,事件处理函数);</span><br><span class="line">   * $(&quot;#div&quot;).delegate(&quot;p&quot;,&quot;click&quot;,function()&#123;&#125;);</span><br><span class="line">   * 4.</span><br><span class="line">   * 对象.on(&quot;事件名字&quot;,&quot;选择器&quot;,事件处理函数);</span><br><span class="line">   * $(&quot;#div&quot;).on(&quot;click&quot;,&quot;p&quot;,function()&#123;&#125;);</span><br><span class="line">   * 最终:推荐使用on的方法来为元素绑定事件</span><br><span class="line">   *</span><br><span class="line">   * 为元素解绑事件</span><br><span class="line">   * bind方式绑定事件,使用unbind()解绑</span><br><span class="line">   * 使用delegate绑定事件,使用undelegate()解绑</span><br><span class="line">   * 使用on绑定事件，使用off()解绑事件</span><br><span class="line">   * 总结:使用什么方式绑定事件,推荐用对应的方式解绑事件</span><br><span class="line">   *</span><br><span class="line">   * 事件参数对象,jQuery中事件参数对象同样存在</span><br><span class="line">   * e.button----&gt;鼠标按键的键值</span><br><span class="line">   * e.altKey-----用户是否按下了alt键-----布尔类型</span><br><span class="line">   * e.shiftKey---用户是否按下了shift键---布尔类型</span><br><span class="line">   * e.ctrlKey----用户是否按下了ctrl键----布尔类型</span><br><span class="line">   * e.keyCode---键盘的按下键的值</span><br><span class="line">   *</span><br><span class="line">   * 链式编程的原理:对象调用的方法如果想要继续链式编程,那么就在这个方法中返回当前的对象(this)</span><br><span class="line">   * 包装集:就是把获取的元素通过jQuery的方式进行包装---如果想要判断这个元素在页面中是否存在,对象.length的方式来判断</span><br><span class="line">   *</span><br><span class="line">   * 例子:</span><br><span class="line">   * if($(&quot;#btn&quot;).length!=0)&#123;</span><br><span class="line">   *   console.log(&quot;存在的&quot;);</span><br><span class="line">   * &#125;else&#123;</span><br><span class="line">   *   console.log(&quot;不存在);</span><br><span class="line">   * &#125;</span><br><span class="line">   * 多库共存:目的就是$这个符号如果被其他开发人员占用,那么此时可以使用.noConflict()对$释放权限</span><br><span class="line">   * var xy=$.noConflict();之后,xy就相当于原来的$,也可以使用jQuery这个对象</span><br><span class="line">   * 插件的使用的步骤:</span><br><span class="line">   * 1.去网上搜,下载,下载后的文件,一般都是一个压缩包,也可以是一个文件夹</span><br><span class="line">   * 2.引入下载后的插件的css文件</span><br><span class="line">   * 3.引入下载后的插件的js文件</span><br><span class="line">   * 4.复制html中的结构的代码</span><br><span class="line">   * 5.复制html中实现功能的代码到页面加载的事件中</span><br><span class="line">   *</span><br><span class="line">   * 一般情况在使用插件的时候,测试的时候,先把这个代码直接复制到一个div(一个标签),调整整体的大小,位置,样式,然后直接放在自己的页面的某个位置,进行使用</span><br><span class="line">  </span><br><span class="line">   * 事件参数对象下的三个属性</span><br><span class="line">   *e.target这个属性得到的是触发该事件的目标对象,此时是一个DOM对象</span><br><span class="line">   *e.currentTarget这个属性得到的是触发该事件的当前的对象</span><br><span class="line">   *e.delegateTarget这个属性得到的是代理的这个对象</span><br><span class="line"> </span><br><span class="line">   * */</span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年09月26日 15:56</p>
+        <p>原始链接： <a class="post-url" href="/2019/09/26/jquery总结/" title="jquery总结">http://www.devil.pub/2019/09/26/jquery总结/</a></p>
+        <footer>
+            <a href="http://www.devil.pub">
+                <img src="/images/logo.png" alt="卢莹">
+                卢莹
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        心意领了
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.devil.pub/2019/09/26/jquery总结/&title=《jquery总结》 — 卢莹的博客&pic=https://www.devil.pub/images/feng/jquery.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.devil.pub/2019/09/26/jquery总结/&title=《jquery总结》 — 卢莹的博客&source=一个前端小菜鸟的笔记" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.devil.pub/2019/09/26/jquery总结/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《jquery总结》 — 卢莹的博客&url=http://www.devil.pub/2019/09/26/jquery总结/&via=http://www.devil.pub" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.devil.pub/2019/09/26/jquery总结/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.devil.pub/2019/09/26/jquery总结/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/jquery/" class="color2">jquery</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-text">总结</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/26/jquery复习2/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">jquery复习2</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTExNC8xNzYzOQ==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 卢莹<br>
+      </p>
+    </div>
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/01/2018 18:18:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://www.devil.pub",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux/">Linux</a><a class="category-link" href="/categories/Vue/">Vue</a><a class="category-link" href="/categories/metron/">metron</a><a class="category-link" href="/categories/python/">python</a><a class="category-link" href="/categories/three-js/">three.js</a><a class="category-link" href="/categories/vue/">vue</a><a class="category-link" href="/categories/大数据/">大数据</a><a class="category-link" href="/categories/服务器-NAT/">服务器 NAT</a><a class="category-link" href="/categories/网络/">网络</a><a class="category-link" href="/categories/虚拟机/">虚拟机</a><a class="category-link" href="/categories/路由器/">路由器</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/图片展示/" style="font-size: 10px;">图片展示</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/文字渐变/" style="font-size: 10px;">文字渐变</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/边框/" style="font-size: 10px;">边框</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>主页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>目录</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/图片展示/" style="font-size: 10px;">图片展示</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/文字渐变/" style="font-size: 10px;">文字渐变</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/边框/" style="font-size: 10px;">边框</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>

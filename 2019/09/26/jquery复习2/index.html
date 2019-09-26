@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>jquery复习2 | 卢莹的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="卢莹的博客">
+  
+  <meta name="description" content="一、元素的相关操作1、元素的创建法一 1234//点击一个按钮,创建一个按钮  $(&quot;#btn&quot;).click(function () &amp;#123;   $(&quot;&amp;lt;input type=&apos;button&apos; value=&apos;按钮&apos;&amp;gt;&quot;).appendTo($(&quot;#dv&quot;));  &amp;#125;);  法二 12345//元素创建的另一个方式    $(&quot;#btn&quot;).click(function">
+<meta name="keywords" content="jquery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery复习2">
+<meta property="og:url" content="http://www.devil.pub/2019/09/26/jquery复习2/index.html">
+<meta property="og:site_name" content="卢莹的博客">
+<meta property="og:description" content="一、元素的相关操作1、元素的创建法一 1234//点击一个按钮,创建一个按钮  $(&quot;#btn&quot;).click(function () &amp;#123;   $(&quot;&amp;lt;input type=&apos;button&apos; value=&apos;按钮&apos;&amp;gt;&quot;).appendTo($(&quot;#dv&quot;));  &amp;#125;);  法二 12345//元素创建的另一个方式    $(&quot;#btn&quot;).click(function">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://www.devil.pub/2019/09/26/jquery复习2/1.png">
+<meta property="og:updated_time" content="2019-09-26T07:28:11.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery复习2">
+<meta name="twitter:description" content="一、元素的相关操作1、元素的创建法一 1234//点击一个按钮,创建一个按钮  $(&quot;#btn&quot;).click(function () &amp;#123;   $(&quot;&amp;lt;input type=&apos;button&apos; value=&apos;按钮&apos;&amp;gt;&quot;).appendTo($(&quot;#dv&quot;));  &amp;#125;);  法二 12345//元素创建的另一个方式    $(&quot;#btn&quot;).click(function">
+<meta name="twitter:image" content="http://www.devil.pub/2019/09/26/jquery复习2/1.png">
+  
+  
+    <link rel="icon" href="https://www.devil.pub/images/hhh.png">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?true";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+  
+  <div style="display: none;">
+    <script src="//s22.cnzz.com/z_stat.php?id=true&web_id=true" language="JavaScript"></script>
+  </div>
+
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">卢莹的博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>主页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>目录</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        卢莹的博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个前端小菜鸟的笔记
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="卢莹的博客" target="_blank" href="https://www.devil.pub">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/1623354901/1623354901.github.io">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-jquery复习2" class="article article-type-post" itemscope itemprop="blogPost">
+ 
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      jquery复习2
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-09-26
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+        
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="一、元素的相关操作"><a href="#一、元素的相关操作" class="headerlink" title="一、元素的相关操作"></a>一、元素的相关操作</h3><h4 id="1、元素的创建"><a href="#1、元素的创建" class="headerlink" title="1、元素的创建"></a>1、元素的创建</h4><p><strong>法一</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//点击一个按钮,创建一个按钮</span></span><br><span class="line">  $(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   $(<span class="string">"&lt;input type='button' value='按钮'&gt;"</span>).appendTo($(<span class="string">"#dv"</span>));</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>法二</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//元素创建的另一个方式</span></span><br><span class="line">    $(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">//通过innerHTML的方式创建元素---以字符串的方式   </span></span><br><span class="line">      $(<span class="string">"#dv"</span>).html(<span class="string">"&lt;input type='button' value='按钮'&gt;"</span>);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、元素的添加"><a href="#2、元素的添加" class="headerlink" title="2、元素的添加"></a>2、元素的添加</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//把创建的span标签这个子元素直接插入到div中第一个子元素的前面</span></span><br><span class="line">        $(<span class="string">"#dv"</span>).prepend($(<span class="string">"&lt;span&gt;this is span&lt;/span&gt;"</span>));</span><br><span class="line">        <span class="comment">//主动的方式</span></span><br><span class="line">        $(<span class="string">"&lt;span&gt;this is span&lt;/span&gt;"</span>).prependTo($(<span class="string">"#dv"</span>));</span><br><span class="line">        <span class="comment">//把元素添加到div的后面的位置,是div的下一个兄弟元素了</span></span><br><span class="line">        $(<span class="string">"#dv"</span>).after($(<span class="string">"&lt;span&gt;this is span&lt;/span&gt;"</span>));</span><br><span class="line">        <span class="comment">//把元素添加到div的前面的位置,是div的上一个兄弟元素了</span></span><br><span class="line">        $(<span class="string">"#dv"</span>).before($(<span class="string">"&lt;span&gt;this is span&lt;/span&gt;"</span>));</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、元素的删除"><a href="#3、元素的删除" class="headerlink" title="3、元素的删除"></a>3、元素的删除</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//从父级元素中移除子级元素---移除所有的子元素</span></span><br><span class="line">        $(<span class="string">"#dv"</span>).html(<span class="string">""</span>);</span><br><span class="line">        <span class="comment">//清空父元素中的子元素</span></span><br><span class="line">        $(<span class="string">"#dv"</span>).empty();<span class="comment">//清空</span></span><br><span class="line">        <span class="comment">//想要干掉谁,直接找到这个元素,调用这个方法就可以了</span></span><br><span class="line">        $(<span class="string">"#dv"</span>).remove();<span class="comment">//自杀---，不是清空</span></span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、案例：点击按钮创建，删除表格，增加行"><a href="#4、案例：点击按钮创建，删除表格，增加行" class="headerlink" title="4、案例：点击按钮创建，删除表格，增加行"></a>4、案例：点击按钮创建，删除表格，增加行</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">      width: 600px;</span><br><span class="line">      height: 450px;</span><br><span class="line">      border: 1px solid red;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./jquery.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">//案例:点击按钮在div中创建一个表格</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//表格数据的数组</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> arr = [</span></span><br><span class="line"><span class="javascript">      &#123; <span class="string">"name"</span>: <span class="string">"传智播客"</span>, <span class="string">"href"</span>: <span class="string">"http://www.itcast.cn"</span> &#125;,</span></span><br><span class="line"><span class="javascript">      &#123; <span class="string">"name"</span>: <span class="string">"快播"</span>, <span class="string">"href"</span>: <span class="string">"http://www.kuaibo.cn"</span> &#125;,</span></span><br><span class="line"><span class="javascript">      &#123; <span class="string">"name"</span>: <span class="string">"优酷"</span>, <span class="string">"href"</span>: <span class="string">"http://www.youku.cn"</span> &#125;,</span></span><br><span class="line"><span class="javascript">      &#123; <span class="string">"name"</span>: <span class="string">"爱奇艺"</span>, <span class="string">"href"</span>: <span class="string">"http://www.iqiyi.cn"</span> &#125;,</span></span><br><span class="line"><span class="javascript">      &#123; <span class="string">"name"</span>: <span class="string">"B站"</span>, <span class="string">"href"</span>: <span class="string">"http://www.bili.cn"</span> &#125;,</span></span><br><span class="line"><span class="javascript">      &#123; <span class="string">"name"</span>: <span class="string">"土豆"</span>, <span class="string">"href"</span>: <span class="string">"http://www.tudou.cn"</span> &#125;</span></span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//页面加载</span></span></span><br><span class="line"><span class="javascript">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//点击按钮创建表格</span></span></span><br><span class="line"><span class="javascript">      $(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//创建表格</span></span></span><br><span class="line"><span class="xml">        var table = $("<span class="tag">&lt;<span class="name">table</span> <span class="attr">style</span>=<span class="string">'cursor: pointer'</span> <span class="attr">border</span>=<span class="string">'1'</span> <span class="attr">cellspacing</span>=<span class="string">'0'</span> <span class="attr">cellpadding</span>=<span class="string">'0'</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span>");</span></span><br><span class="line"><span class="javascript">        <span class="comment">//把表格加入到div中</span></span></span><br><span class="line"><span class="javascript">        $(<span class="string">"#dv"</span>).append(table);</span></span><br><span class="line"><span class="javascript">        <span class="comment">//循环遍历数组,创建行</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> dt = arr[i];<span class="comment">//每个数组元素,都是对象</span></span></span><br><span class="line"><span class="javascript">          <span class="comment">//创建行,并加入到table中</span></span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> tr = $(<span class="string">"&lt;tr&gt;&lt;/tr&gt;"</span>);</span></span><br><span class="line">          table.append(tr);</span><br><span class="line"><span class="javascript">          <span class="comment">//在列中显示内容,列在行中</span></span></span><br><span class="line"><span class="javascript">          <span class="comment">//创建td,并加入到tr中</span></span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> td1 = $(<span class="string">"&lt;td&gt;"</span> + dt.name + <span class="string">"&lt;/td&gt;"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="comment">//第一个列加入到tr中</span></span></span><br><span class="line">          tr.append(td1);</span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> td2 = $(<span class="string">"&lt;td&gt;&lt;a href='"</span> + dt.href + <span class="string">"'&gt;"</span> + dt.name + <span class="string">"&lt;/a&gt;&lt;/td&gt;"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="comment">//第二个列加入到tr中</span></span></span><br><span class="line">          tr.append(td2);</span><br><span class="line"></span><br><span class="line"><span class="javascript">          <span class="comment">//鼠标进入到每一行的时候,该行有高亮显示的效果</span></span></span><br><span class="line"><span class="javascript">          tr.mouseenter(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="comment">//鼠标进入</span></span></span><br><span class="line"><span class="javascript">            $(<span class="keyword">this</span>).css(<span class="string">"backgroundColor"</span>, <span class="string">"green"</span>);</span></span><br><span class="line"><span class="javascript">          &#125;).mouseleave(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="comment">//鼠标离开</span></span></span><br><span class="line"><span class="javascript">            $(<span class="keyword">this</span>).css(<span class="string">"backgroundColor"</span>, <span class="string">""</span>);</span></span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line"><span class="javascript">      <span class="comment">//点击按钮移除表格</span></span></span><br><span class="line"><span class="javascript">      $(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//当前这个按钮的下一个兄弟元素,清空里面的子元素</span></span></span><br><span class="line"><span class="javascript">        $(<span class="keyword">this</span>).next().empty();</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log($(<span class="keyword">this</span>).next());</span></span><br><span class="line"><span class="javascript">        <span class="comment">//$("#dv").empty();</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">//所有的div中的第一个div</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//$("#dv").children("table").remove();</span></span></span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line"><span class="javascript">      <span class="comment">//点击按钮,在table中添加一行</span></span></span><br><span class="line"><span class="javascript">      $(<span class="string">"#btn3"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//创建一行</span></span></span><br><span class="line"><span class="xml">        var tr = $("<span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>腾讯<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'http://.qq.com'</span>&gt;</span>腾讯<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span>");</span></span><br><span class="line"><span class="javascript">        <span class="comment">//把这一行加入到table中</span></span></span><br><span class="line"><span class="javascript">        $(<span class="string">"#dv"</span>).children(<span class="string">"table"</span>).append(tr);</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"创建一个表格"</span> <span class="attr">id</span>=<span class="string">"btn"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"移除表格"</span> <span class="attr">id</span>=<span class="string">"btn2"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"添加一行"</span> <span class="attr">id</span>=<span class="string">"btn3"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"dv"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="二、元素的选中问题"><a href="#二、元素的选中问题" class="headerlink" title="二、元素的选中问题"></a>二、元素的选中问题</h3><h4 id="1、attr"><a href="#1、attr" class="headerlink" title="1、attr"></a>1、attr</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* .attr(参数1,参数2);-----设置某个属性的值</span><br><span class="line">    * .attr(参数1);-----获取某个属性的值</span><br><span class="line">    *</span><br><span class="line">    * 参数1:属性的名字</span><br><span class="line">    * 参数2:属性的值</span><br><span class="line">    *</span><br><span class="line">    * .attr方法主要是操作元素的自定义属性的,但是也可以操作元素的自带的属性(html中本身就有的属性),但是,但可是:操作元素的选中的ckeched的时候,不是很合适!</span><br><span class="line">    * 操作元素的选中的checked的时候,推荐使用prop方法</span><br></pre></td></tr></table></figure>
+
+<p><strong>案例</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-1.12.1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">//点击按钮选中性别</span></span></span><br><span class="line"><span class="javascript">      $(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//DOM中操作</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//document.getElementById("r3").checked=true;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//jQuery操作</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//$("#r3").get(0).checked=true;//DOM的写法</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//需要使用自定义属性的方式</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//$("#r3").attr("checked",true);//设置</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//获取是否被选中了</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//console.log($("#r3").attr("checked"));//undefined</span></span></span><br><span class="line"> </span><br><span class="line"><span class="javascript">        <span class="comment">//如果标签默认选中了---attr("checked")---&gt;结果:checked</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//如果标签没有选中----attr("checked")----&gt;结果:undefined</span></span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="javascript">        <span class="comment">//点击按钮,选中就设置不选中,如果没有选中,就设置选中的结果</span></span></span><br><span class="line"> </span><br><span class="line"><span class="javascript">        <span class="comment">//attr方法针对单选框或者是复选框的是否选中问题,操作起来很麻烦,几乎不用,后面说</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span>($(<span class="string">"#r3"</span>).attr(<span class="string">"checked"</span>)==<span class="literal">undefined</span>)&#123;</span></span><br><span class="line"><span class="javascript">          <span class="comment">//undefined</span></span></span><br><span class="line"><span class="javascript">          $(<span class="string">"#r3"</span>).attr(<span class="string">"checked"</span>,<span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"哈哈"</span>);</span></span><br><span class="line"><span class="javascript">        &#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="comment">//checked---&gt;选中了</span></span></span><br><span class="line"><span class="javascript">          $(<span class="string">"#r3"</span>).attr(<span class="string">"checked"</span>,<span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">"嘎嘎"</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"选中"</span> <span class="attr">id</span>=<span class="string">"btn"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">请选择小苏的性别:</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">name</span>=<span class="string">"sex"</span>/&gt;</span>男</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"2"</span> <span class="attr">name</span>=<span class="string">"sex"</span>/&gt;</span>女</span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"3"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">id</span>=<span class="string">"r3"</span>/&gt;</span>人妖</span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2、prop-：复选框选中"><a href="#2、prop-：复选框选中" class="headerlink" title="2、prop()：复选框选中"></a>2、prop()：复选框选中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*设置或者是获取元素的选中的问题</span><br><span class="line">       * 推荐使用prop()方法</span><br><span class="line">       * .prop(&quot;属性&quot;,值); 值一般是布尔类型-----&gt;目前这么写代码是设置选中</span><br><span class="line">       * .prop(&quot;属性&quot;);-----获取这个元素是否选中</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、元素的操作"><a href="#三、元素的操作" class="headerlink" title="三、元素的操作"></a>三、元素的操作</h3><h4 id="1、操作元素"><a href="#1、操作元素" class="headerlink" title="1、操作元素"></a>1、操作元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* 可以设置,也可以获取</span><br><span class="line">    * .width()是元素的宽</span><br><span class="line">    * .height()是元素的高</span><br><span class="line">    *</span><br><span class="line">    * .offset()---&gt;获取的是对象,可以设置,也可以获取</span><br><span class="line">    * .offset(&#123;&quot;left&quot;:值,&quot;top&quot;:值&#125;);设置</span><br><span class="line">    *</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、元素的卷曲距离"><a href="#2、元素的卷曲距离" class="headerlink" title="2、元素的卷曲距离"></a>2、元素的卷曲距离</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">获取元素向上卷曲出去的距离,  scrollTop()---&gt;方法,数字类型</span><br><span class="line">获取元素向左卷曲出去的距离,  scrollLeft()---&gt;方法,数字类型</span><br><span class="line">div滚动上下滚动条的时候,一直获取他的向上卷曲出去的值</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、事件"><a href="#四、事件" class="headerlink" title="四、事件"></a>四、事件</h3><h4 id="1、为元素绑定事件"><a href="#1、为元素绑定事件" class="headerlink" title="1、为元素绑定事件"></a>1、为元素绑定事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">为元素绑定事件三种方式</span><br><span class="line">    * 对象.事件名字(事件处理函数);---$(&quot;#btn&quot;).click(function()&#123;&#125;);</span><br><span class="line">    * 对象.bind(&quot;事件名字&quot;,事件处理函数);---$(&quot;#btn&quot;).bind(&quot;click&quot;,function()&#123;&#125;);</span><br><span class="line">* 父级对象.delegate(&quot;子级元素&quot;,&quot;事件名字&quot;,事件处理函数);----&gt;$(&quot;#dv&quot;).delegate(&quot;p&quot;,&quot;click&quot;,function()&#123;&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、为元素解绑事件"><a href="#2、为元素解绑事件" class="headerlink" title="2、为元素解绑事件"></a>2、为元素解绑事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">bind---unbind</span><br><span class="line">* bind括号中写什么事件的名字就会把这个事件解绑,会把这个元素的这个点击的多个事件都会解绑</span><br><span class="line">* 对象.click()这种方式添加的事件也可以使用unbind解绑</span><br><span class="line">$(&quot;#dv&quot;).unbind(&quot;click&quot;);</span><br><span class="line">括号中没有任何参数,此时该元素的所有的事件全部解绑</span><br><span class="line">$(&quot;#dv&quot;).unbind();</span><br><span class="line">同时解绑多个事件---每个事件的名字中间用空格即可</span><br><span class="line">$(&quot;#dv&quot;).unbind(&quot;mouseenter mouseleave&quot;)</span><br><span class="line">delegate---undelegate</span><br><span class="line">* p的点击事件没有了,移除了p的所有的事件</span><br><span class="line">$(&quot;#dv&quot;).undelegate();</span><br><span class="line">* 移除的是p的点击事件</span><br><span class="line">$(&quot;#dv&quot;).undelegate(&quot;p&quot;,&quot;click&quot;);</span><br><span class="line">* 可以移除多个事件,但是每个事件之间用空格隔开</span><br><span class="line">$(&quot;#dv&quot;).undelegate(&quot;p&quot;,&quot;click mouseenter&quot;);</span><br><span class="line">on---off</span><br><span class="line">* 父级元素和子级元素的所有的事件全部解绑</span><br><span class="line">$(&quot;#dv&quot;).off();</span><br><span class="line">* 把父级元素和子级元素的点击事件解绑</span><br><span class="line">$(&quot;#dv&quot;).off(&quot;click&quot;);</span><br><span class="line">* 父级元素和子级的元素的多个事件,中间用空格</span><br><span class="line">$(&quot;#dv&quot;).off(&quot;click mouseenter&quot;);</span><br><span class="line">* 解绑p标签的点击事件</span><br><span class="line">$(&quot;#dv&quot;).off(&quot;click&quot;,&quot;p&quot;);</span><br><span class="line">* p的两个事件都没了</span><br><span class="line">$(&quot;#dv&quot;).off(&quot;click mouseenter&quot;,&quot;p&quot;);</span><br><span class="line">        p的所有的事件全部解绑</span><br><span class="line">        $(&quot;#dv&quot;).off(&quot;&quot;,&quot;p&quot;);</span><br><span class="line">        干掉div中所有的子元素的点击事件</span><br><span class="line">        $(&quot;#dv&quot;).off(&quot;click&quot;,&quot;**&quot;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、阻止事件冒泡-reture-false"><a href="#3、阻止事件冒泡-reture-false" class="headerlink" title="3、阻止事件冒泡 : reture false"></a>3、阻止事件冒泡 : reture false</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="string">"#dv1"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//为什么是undefined</span></span><br><span class="line">        <span class="comment">//对象.id-----&gt;DOM中的</span></span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="keyword">this</span>).attr(<span class="string">"id"</span>));</span><br><span class="line">      &#125;);</span><br><span class="line">      $(<span class="string">"#dv2"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="keyword">this</span>).attr(<span class="string">"id"</span>));</span><br><span class="line">      &#125;);</span><br><span class="line">      $(<span class="string">"#dv3"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="keyword">this</span>).attr(<span class="string">"id"</span>));</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、事件的触发"><a href="#4、事件的触发" class="headerlink" title="4、事件的触发"></a>4、事件的触发</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">调用文本框的获取焦点的事件---第一种方式让别的元素的事件触发</span><br><span class="line">        1、对象.事件名字();</span><br><span class="line">         $(&quot;#txt&quot;).focus();</span><br><span class="line">        2、第二种触发事件的方式</span><br><span class="line">         $(&quot;#txt&quot;).trigger(&quot;focus&quot;);//触发的意思</span><br><span class="line">        3、 这种方式可以触发该事件,但是,不能触发浏览器的默认的行为</span><br><span class="line">         $(&quot;#txt&quot;).triggerHandler(&quot;focus&quot;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="5、事件对象参数"><a href="#5、事件对象参数" class="headerlink" title="5、事件对象参数"></a>5、事件对象参数</h4><p>在事件对象中传入参数，返回值为对象<br><img src="/2019/09/26/jquery复习2/1.png" alt="jquery复习2"></p>
+<h3 id="五、each方法"><a href="#五、each方法" class="headerlink" title="五、each方法"></a>五、each方法</h3><p>隐式迭代—内部帮助我们循环遍历做操作<br>每个元素做不同的操作的时候<br>each方法,帮助我们遍历jQuery的对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(function () &#123;</span><br><span class="line">      //获取所有的li,针对每个li的透明进行设置</span><br><span class="line">      $(&quot;#uu&gt;li&quot;).each(function (index,ele) &#123;</span><br><span class="line">        //参数1:索引,参数2:对象</span><br><span class="line">        //console.log(arguments[0]+&quot;====&quot;+arguments[1]);</span><br><span class="line">        //每个li的透明度不一样</span><br><span class="line">        var opacity=(index+1)/10;</span><br><span class="line">        $(ele).css(&quot;opacity&quot;,opacity);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>each方法就是用来遍历jQuery对象的,但是,里面的每个对象最开始都是DOM对象,如果想要使用jQuery的方法,需要把DOM对象转jQuery对象</p>
+<h3 id="六、几个属性"><a href="#六、几个属性" class="headerlink" title="六、几个属性"></a>六、几个属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">innerWidth()/innerHeight() 方法返回元素的宽度/高度（包括内边距）。</span><br><span class="line">outerWidth()/outerHeight()  方法返回元素的宽度/高度（包括内边距和边框）。</span><br><span class="line">outerWidth(true)/outerHeight(true)  方法返回元素的宽度/高度（包括内边距、边框和外边距）。</span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年09月26日 15:28</p>
+        <p>原始链接： <a class="post-url" href="/2019/09/26/jquery复习2/" title="jquery复习2">http://www.devil.pub/2019/09/26/jquery复习2/</a></p>
+        <footer>
+            <a href="http://www.devil.pub">
+                <img src="/images/logo.png" alt="卢莹">
+                卢莹
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        心意领了
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.devil.pub/2019/09/26/jquery复习2/&title=《jquery复习2》 — 卢莹的博客&pic=https://www.devil.pub/images/feng/jquery.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.devil.pub/2019/09/26/jquery复习2/&title=《jquery复习2》 — 卢莹的博客&source=一个前端小菜鸟的笔记" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.devil.pub/2019/09/26/jquery复习2/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《jquery复习2》 — 卢莹的博客&url=http://www.devil.pub/2019/09/26/jquery复习2/&via=http://www.devil.pub" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.devil.pub/2019/09/26/jquery复习2/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://www.devil.pub/2019/09/26/jquery复习2/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/jquery/" class="color2">jquery</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、元素的相关操作"><span class="post-toc-text">一、元素的相关操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、元素的创建"><span class="post-toc-text">1、元素的创建</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、元素的添加"><span class="post-toc-text">2、元素的添加</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、元素的删除"><span class="post-toc-text">3、元素的删除</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、案例：点击按钮创建，删除表格，增加行"><span class="post-toc-text">4、案例：点击按钮创建，删除表格，增加行</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、元素的选中问题"><span class="post-toc-text">二、元素的选中问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、attr"><span class="post-toc-text">1、attr</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、prop-：复选框选中"><span class="post-toc-text">2、prop()：复选框选中</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、元素的操作"><span class="post-toc-text">三、元素的操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、操作元素"><span class="post-toc-text">1、操作元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、元素的卷曲距离"><span class="post-toc-text">2、元素的卷曲距离</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、事件"><span class="post-toc-text">四、事件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1、为元素绑定事件"><span class="post-toc-text">1、为元素绑定事件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2、为元素解绑事件"><span class="post-toc-text">2、为元素解绑事件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、阻止事件冒泡-reture-false"><span class="post-toc-text">3、阻止事件冒泡 : reture false</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4、事件的触发"><span class="post-toc-text">4、事件的触发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5、事件对象参数"><span class="post-toc-text">5、事件对象参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、each方法"><span class="post-toc-text">五、each方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、几个属性"><span class="post-toc-text">六、几个属性</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/09/26/jquery总结/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          jquery总结
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/09/26/jquery复习1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">jquery复习1</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTExNC8xNzYzOQ==">
+    <script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 卢莹<br>
+      </p>
+    </div>
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/01/2018 18:18:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://www.devil.pub",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/Linux/">Linux</a><a class="category-link" href="/categories/Vue/">Vue</a><a class="category-link" href="/categories/metron/">metron</a><a class="category-link" href="/categories/python/">python</a><a class="category-link" href="/categories/three-js/">three.js</a><a class="category-link" href="/categories/vue/">vue</a><a class="category-link" href="/categories/大数据/">大数据</a><a class="category-link" href="/categories/服务器-NAT/">服务器 NAT</a><a class="category-link" href="/categories/网络/">网络</a><a class="category-link" href="/categories/虚拟机/">虚拟机</a><a class="category-link" href="/categories/路由器/">路由器</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/图片展示/" style="font-size: 10px;">图片展示</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/文字渐变/" style="font-size: 10px;">文字渐变</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/边框/" style="font-size: 10px;">边框</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>主页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>目录</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/hyper-v/" style="font-size: 10px;">hyper-v</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/metron/" style="font-size: 10px;">metron</a> <a href="/tags/three-js/" style="font-size: 10px;">three.js</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/交换机重置/" style="font-size: 10px;">交换机重置</a> <a href="/tags/图片展示/" style="font-size: 10px;">图片展示</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/循环语句/" style="font-size: 10px;">循环语句</a> <a href="/tags/文字渐变/" style="font-size: 10px;">文字渐变</a> <a href="/tags/服务器-NAT/" style="font-size: 10px;">服务器 NAT</a> <a href="/tags/格式化输出/" style="font-size: 10px;">格式化输出</a> <a href="/tags/端口镜像/" style="font-size: 10px;">端口镜像</a> <a href="/tags/组件/" style="font-size: 15px;">组件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/路由器/" style="font-size: 10px;">路由器</a> <a href="/tags/边框/" style="font-size: 10px;">边框</a> <a href="/tags/钩子函数-动画/" style="font-size: 10px;">钩子函数 动画</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
